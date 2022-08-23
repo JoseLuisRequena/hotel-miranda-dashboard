@@ -25,27 +25,46 @@ export const Contacts = (props) => {
             
             <StyledHeader>
                 <h1>Contacts</h1><h1></h1><h1></h1><h1></h1>
-            <button style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                            }} type="button">{Icons.enveloper}</button>
-            <button style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                            }} type="button">{Icons.bell}</button>
-            <button style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                            }} type="button" onClick={() => props.setAuth(false)}>{Icons.logout}</button>
+            <button 
+                style={{ 
+                    width: "40px", 
+                    height: "30px", 
+                    margin: "auto 0px", 
+                    border: "none", 
+                    background: "none",
+                    cursor: "pointer"
+                }} 
+                type="button"
+            >
+                {Icons.enveloper}
+            </button>
+            <button 
+                style={{
+                    width: "40px", 
+                    height: "30px", 
+                    margin: "auto 0px", 
+                    border: "none", 
+                    background: "none",
+                    cursor: "pointer"
+                }} 
+            type="button"
+            >
+                {Icons.bell}
+            </button>
+            <button 
+                style={{
+                    width: "40px", 
+                    height: "30px", 
+                    margin: "auto 0px", 
+                    border: "none", 
+                    background: "none",
+                    cursor: "pointer"
+                }}
+                type="button" 
+                onClick={() => props.setAuth(false)}
+            >
+                {Icons.logout}
+            </button>
             </StyledHeader>
             </Contenedor>
         </>
