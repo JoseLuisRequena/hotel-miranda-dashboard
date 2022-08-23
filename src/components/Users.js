@@ -22,28 +22,47 @@ export const Users = (props) => {
                     </div>
                 </Nav> 
                 <StyledHeader>
-                <h1>Users</h1><h1></h1><h1></h1><h1></h1><h1></h1><h1></h1>
-            <button style={{ width: "40px", 
+                    <h1>Users</h1><h1></h1><h1></h1><h1></h1><h1></h1><h1></h1>
+                    <button 
+                        style={{ 
+                            width: "40px", 
                             height: "30px", 
                             margin: "auto 0px", 
                             border: "none", 
                             background: "none",
                             cursor: "pointer"
-                            }} type="button">{Icons.enveloper}</button>
-            <button style={{ width: "40px", 
+                        }} 
+                        type="button"
+                    >
+                        {Icons.enveloper}
+                    </button>
+                    <button 
+                        style={{ 
+                            width: "40px", 
                             height: "30px", 
                             margin: "auto 0px", 
                             border: "none", 
                             background: "none",
                             cursor: "pointer"
-                            }} type="button">{Icons.bell}</button>
-            <button style={{ width: "40px", 
+                        }} 
+                        type="button"
+                    >
+                        {Icons.bell}
+                    </button>
+                    <button 
+                        style={{ 
+                            width: "40px", 
                             height: "30px", 
                             margin: "auto 0px", 
                             border: "none", 
                             background: "none",
                             cursor: "pointer"
-                            }} type="button" onClick={() => props.setAuth(false)}>{Icons.logout}</button>
+                        }} 
+                        type="button"
+                        onClick={() => props.setAuth(false)}
+                    >
+                        {Icons.logout}
+                    </button>
                 </StyledHeader>
             </Contenedor>
         </>

@@ -33,27 +33,46 @@ export const Rooms = (props) => {
             <div style={{display: "block",     width: "100%"}}>
             <StyledHeader>
             <h2>Rooms</h2><h1></h1><h1></h1><h1></h1><h1></h1><h1></h1>
-            <button style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                            }} type="button">{Icons.enveloper}</button>
-            <button style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                            }} type="button">{Icons.bell}</button>
-            <button style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                            }} type="button" onClick={() => props.setAuth(false)}>{Icons.logout}</button>
+            <button 
+                style={{ 
+                    width: "40px", 
+                    height: "30px", 
+                    margin: "auto 0px", 
+                    border: "none", 
+                    background: "none",
+                    cursor: "pointer"
+                }} 
+                type="button"
+            >
+                {Icons.enveloper}
+            </button>
+            <button 
+                style={{ 
+                    width: "40px", 
+                    height: "30px", 
+                    margin: "auto 0px", 
+                    border: "none", 
+                    background: "none",
+                    cursor: "pointer"
+                }} 
+                type="button"
+            >
+                {Icons.bell}
+            </button>
+            <button 
+                style={{ 
+                    width: "40px", 
+                    height: "30px", 
+                    margin: "auto 0px", 
+                    border: "none", 
+                    background: "none",
+                    cursor: "pointer"
+                }} 
+                type="button" 
+                onClick={() => props.setAuth(false)}
+            >
+                {Icons.logout}
+            </button>
             </StyledHeader>
             <ul>
                 {rooms.first_name}
