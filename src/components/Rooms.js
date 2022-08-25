@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Contenedor } from "../styles/Contenedor";
 import { Nav } from "../styles/Nav";
 import { StyledHeader } from "../styles/StyledIcons";
@@ -6,14 +6,24 @@ import { StyledImg } from "../styles/StyledImg";
 import { StyledLink } from "../styles/StyledLink";
 import { Icons } from "../styles/StyledIcons";
 import ArrayRooms from "../json/Bookings.json";
+import { WrapperMenuRight } from "../styles/WrapperMenuRight";
+import { useContext } from "react";
+import { AuthContext } from "../App";
+//import { BookingsList } from "../json/BookingsList"
 // rooms.json son bookings
 
 export const Rooms = (props) => {
-    console.log(ArrayRooms);
-    
-    let rooms = ArrayRooms.filter(room => room.id === 3);
+    const { state, dispatch } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    console.log(rooms)
+    const Logout = () => {
+        dispatch({ type: "logout" });
+        navigate("/", { replace: true });
+    };
+    
+    let rooms = ArrayRooms;
+
+    //console.log(rooms)
     
     return (
       <>
@@ -30,54 +40,59 @@ export const Rooms = (props) => {
                     <StyledLink to="/contacts">Contacts</StyledLink><br/>
                 </div>
             </Nav> 
-            <div style={{display: "block",     width: "100%"}}>
-            <StyledHeader>
-            <h2>Rooms</h2><h1></h1><h1></h1><h1></h1><h1></h1><h1></h1>
-            <button 
-                style={{ 
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button"
-            >
-                {Icons.enveloper}
-            </button>
-            <button 
-                style={{ 
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button"
-            >
-                {Icons.bell}
-            </button>
-            <button 
-                style={{ 
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button" 
-                onClick={() => props.setAuth(false)}
-            >
-                {Icons.logout}
-            </button>
-            </StyledHeader>
-            <ul>
-                {rooms.first_name}
-                {/*rooms.map(room => (<li key={room.id}><Link to={`/rooms/${room}`}>{room}</Link></li>))*/}
-            </ul>
+            <div style={{display: "block", width: "100%"}}>
+                <StyledHeader>
+                    <h2>Rooms</h2>
+                    
+                    <WrapperMenuRight>
+                        <button 
+                            style={{ 
+                                width: "40px", 
+                                height: "30px", 
+                                margin: "auto 0px", 
+                                border: "none", 
+                                background: "none",
+                                cursor: "pointer"
+                            }} 
+                            type="button"
+                        >
+                            {Icons.enveloper}
+                        </button>
+                        <button 
+                            style={{ 
+                                width: "40px", 
+                                height: "30px", 
+                                margin: "auto 0px", 
+                                border: "none", 
+                                background: "none",
+                                cursor: "pointer"
+                            }} 
+                            type="button"
+                        >
+                            {Icons.bell}
+                        </button>
+                        <button 
+                            style={{ 
+                                width: "40px", 
+                                height: "30px", 
+                                margin: "auto 0px", 
+                                border: "none", 
+                                background: "none",
+                                cursor: "pointer"
+                            }} 
+                            type="button" 
+                            onClick={() => Logout()}
+                        >
+                            {Icons.logout}
+                        </button>
+                    </WrapperMenuRight>
+                </StyledHeader>
+                
+                <ul>
+                    {rooms.map( room => 
+                    <li key = {room.id} >{Object.values(room)}</li>)}
+                    {/*rooms.map(room => (<li key={room.id}>{room}</li>))*/}
+                </ul>
             </div>
         </Contenedor>
       </>

@@ -13,40 +13,53 @@ import { StyledInput } from "./styles/StyledInput";
 import { StyledForm } from "./styles/StyledForm";
 import { StyledButton } from "./styles/StyledButton";
 import { Icons, StyledHeader } from "./styles/StyledIcons";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import './App.css';
+import { WrapperMenuRight } from "./styles/WrapperMenuRight";
 
 
-const RequireAuth = (props) => {
+function RequireAuth({children}) {
+    const { state } = useContext(AuthContext);
     let location = useLocation();
-  
-    if (!props.auth) {
+    if (!state.auth) {
       return <Navigate to="/" state={{ from: location }} replace />;
     }
-    return props.children;
+    return children;
 };
 
-const Login = (props) => {
-    let navigate = useNavigate();
-    let location = useLocation();
-    const [user, setUser] = useState("");
-    const [password, setpasword] = useState("");
+const Login = () => {
+    const { dispatch } = useContext(AuthContext);
+    const [user, setUser] = useState("Admin");
+    const [password, setpassword] = useState("Admin");
   
+    const adminUser ={
+        name: "Admin",
+        email: "Admin@Admin.com",
+        password: "Admin"
+    }
+
+    const adminData = {
+        AdminName: adminUser.name,
+        AdminEmail: adminUser.email
+    } 
+
     const handleSubmit = (event) => {
       event.preventDefault();
-      if (user === "Admin" && password === "Admin") {
-        props.setAuth(true);
-        let from = location.state?.from?.pathname || "/dashboard";
-        navigate(from, { replace: true });
-      } else {
-        alert('invalid username or password')
-        props.setAuth(false);
+      if (user === adminUser.name && password === adminUser.password) {
+        dispatch({ type: "login", user: adminData });
       }
     };
+
     return (
         <StyledLogin>
                 <StyledImg/>
-            <StyledForm onSubmit={handleSubmit}>
+            <StyledForm 
+                onSubmit={handleSubmit}
+                user={user}
+                setUser={setUser}
+                password={password}
+                setpassword={setpassword}
+            >
                 <label>
                     <StyledInput  
                         type="text"
@@ -62,7 +75,7 @@ const Login = (props) => {
                         id="password"
                         placeholder="Password = Admin"
                         value={password}
-                        onChange={(e) => setpasword(e.target.value)}
+                        onChange={(e) => setpassword(e.target.value)}
                     /><br/>
                 </label>
                 <StyledButton type="submit" >Login</StyledButton>
@@ -71,23 +84,32 @@ const Login = (props) => {
     )
 }
 
-const Dashboard = (props) => {
+const Dashboard = () => {
+    const { state, dispatch } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const Logout = () => {
+        dispatch({ type: "logout" });
+        navigate("/", { replace: true });
+    };
+
   return (
     <Contenedor>
-    <Nav>
-        <div>
-           <StyledImg />
-        </div>
-        <div>
-            <StyledLink to="/dashboard">Dashboard</StyledLink><br/>
-            <StyledLink to="/bookings">Bookings</StyledLink><br/>
-            <StyledLink to="/rooms">Rooms</StyledLink><br/>
-            <StyledLink to="/users">Users</StyledLink><br/>
-            <StyledLink to="/contacts">Contacts</StyledLink><br/>
-        </div>
-    </Nav>
+        <Nav>
+            <div>
+               <StyledImg />
+            </div>
+            <div>
+                <StyledLink to="/dashboard">Dashboard</StyledLink><br/>
+                <StyledLink to="/bookings">Bookings</StyledLink><br/>
+                <StyledLink to="/rooms">Rooms</StyledLink><br/>
+                <StyledLink to="/users">Users</StyledLink><br/>
+                <StyledLink to="/contacts">Contacts</StyledLink><br/>
+            </div>
+        </Nav>
         <StyledHeader >
-            <h1>Dashboard</h1><h1></h1><h1></h1>
+            <h2>Dashboard</h2>
+            <WrapperMenuRight>
             <button 
                 style={{
                     width: "40px", 
@@ -124,46 +146,93 @@ const Dashboard = (props) => {
                     cursor: "pointer"
                 }} 
                 type="button" 
-                onClick={() => props.setAuth(false)}
+                onClick={() => Logout() }
             >
                 {Icons.logout}
             </button>
-            
+            </WrapperMenuRight>
         </StyledHeader>
     </Contenedor>
   );  
 }
 
-function App() {
-  const [auth, setAuth] = useState(localStorage.getItem("auth") !== null);
-  useEffect(() => {
-    if (auth) {
-      localStorage.setItem("auth", true);
-    } else {
-      localStorage.removeItem("auth");
+const initialUser = localStorage.getItem("auth") ? JSON.parse(localStorage.getItem("auth")) : { auth:false, name: null, email:null };
+
+const authReducer = (state, action) => {
+    switch (action.type) {
+      case "login":
+        localStorage.setItem("auth", "true");
+        return {
+          ...state,
+          auth: true,
+          name: action.user.AdminName,
+          email: action.user.AdminEmail,
+        };
+      case "logout":
+        localStorage.removeItem("auth");
+        return {
+          ...state,
+          auth: false,
+          name: null,
+          email: null,
+        };
+      case "changeName":
+        localStorage.setItem("auth", JSON.stringify(state));
+        return {
+          ...state,
+          name: action.name,
+        };
+      case "changeEmail":
+        localStorage.setItem("auth", JSON.stringify(state));
+        return {
+          ...state,
+          email: action.email,
+        };
+      default:
+        return state;
     }
-  }, [auth]);
-  return (
+};
+
+export const AuthContext = createContext();
+
+function App() {
+    const [state, dispatch] = useReducer(authReducer, initialUser);
+    let navigate = useNavigate();
+    //const [displayLat, setDisplayLat] = useState("block");
+
+
+    //const [auth, setAuth] = useState(localStorage.getItem("auth") !== null);-------
+    useEffect(() => {
+        if (state.auth) {
+            localStorage.setItem("auth", JSON.stringify(state));
+            navigate("/dashboard", { replace: true });
+        } else {
+            navigate("/", { replace: true });
+        }
+    }, [state.auth]);
     
-    <div className="App">
-        <Routes>
-            <Route path="/" element={<Login setAuth={setAuth}/>} />
-            
-            <Route path="/dashboard" element={<RequireAuth auth={auth}><Dashboard setAuth={setAuth} auth={auth}/></RequireAuth>} />
-            
-            <Route path="/rooms" element={<RequireAuth auth={auth}><Rooms setAuth={setAuth}/></RequireAuth>} />
-            
-            <Route path="/rooms/:room" element={<RequireAuth auth={auth}><Room setAuth={setAuth}/></RequireAuth>} />
-            
-            <Route path="/bookings" element={<RequireAuth auth={auth}><Bookings setAuth={setAuth}/></RequireAuth>} />
-            
-            <Route path="/users" element={<RequireAuth auth={auth}><Users setAuth={setAuth}/></RequireAuth>} />
-            
-            <Route path="/contacts" element={<RequireAuth auth={auth}><Contacts setAuth={setAuth}/></RequireAuth>} />
-        
-        </Routes>
-    </div>
-  );
+    return (
+        <AuthContext.Provider value={{ state, dispatch }}>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Login />} />
+
+                    <Route path="/dashboard" element={<RequireAuth ><Dashboard /></RequireAuth>} />
+
+                    <Route path="/rooms" element={<RequireAuth ><Rooms /></RequireAuth>} />
+
+                    <Route path="/rooms/:room" element={<RequireAuth ><Room /></RequireAuth>} />
+
+                    <Route path="/bookings" element={<RequireAuth ><Bookings /></RequireAuth>} />
+
+                    <Route path="/users" element={<RequireAuth ><Users /></RequireAuth>} />
+
+                    <Route path="/contacts" element={<RequireAuth ><Contacts /></RequireAuth>} />
+
+                </Routes>
+            </div>
+        </AuthContext.Provider>
+    );
 }
 
 export default App;

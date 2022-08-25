@@ -7,7 +7,7 @@ import { ReactComponent as EnvelopeIcon } from "../imgs/iconEnvelope.svg"
 
 export const StyledHeader = styled.div`
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     top: 0;
     width: 100%;
     height: 120px;
