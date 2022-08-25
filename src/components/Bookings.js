@@ -4,9 +4,33 @@ import { StyledImg } from "../styles/StyledImg";
 import { StyledLink } from "../styles/StyledLink";
 import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
+import { WrapperMenuRight } from "../styles/WrapperMenuRight";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../App";
+import { getAllBookings, allBookingsArray,oneBooking } from "../Slices/bookingsSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 
-export const Bookings = (props) => {
+export const Bookings = () => {
+    
+    // refactorizar a un componente
+     const { state, dispatch } = useContext(AuthContext);
+     const navigate = useNavigate();
+
+     const Logout = () => {
+         dispatch({ type: "logout" });
+         navigate("/", { replace: true });
+     };
+    //-------------------
+    const dispatch2 = useDispatch();
+    const bookingsList = useSelector(allBookingsArray);
+
+    useEffect(() => {
+        dispatch2(getAllBookings());
+        console.log('desde booking', bookingsList );
+    }, [])
+    
     return (
         <>
         <Contenedor>
@@ -23,47 +47,53 @@ export const Bookings = (props) => {
                 </div>
             </Nav> 
             <StyledHeader>
-                <h1>Bookings</h1><h1></h1><h1></h1><h1></h1>
-            <button 
-                style={{ 
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button"
-            >
-                {Icons.enveloper}
-            </button>
-            <button 
-                style={{ 
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button"
-                >
-                    {Icons.bell}
-                </button>
-            <button 
-                style={{ width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button" 
-                onClick={() => props.setAuth(false)}
-            >
-                {Icons.logout}
-            </button>
+                <h2>Bookings</h2>
+                <WrapperMenuRight>
+                    <button 
+                        style={{ 
+                            width: "40px", 
+                            height: "30px", 
+                            margin: "auto 0px", 
+                            border: "none", 
+                            background: "none",
+                            cursor: "pointer"
+                        }} 
+                        type="button"
+                    >
+                        {Icons.enveloper}
+                    </button>
+                    <button 
+                        style={{ 
+                            width: "40px", 
+                            height: "30px", 
+                            margin: "auto 0px", 
+                            border: "none", 
+                            background: "none",
+                            cursor: "pointer"
+                        }} 
+                        type="button"
+                        >
+                            {Icons.bell}
+                        </button>
+                    <button 
+                        style={{ width: "40px", 
+                            height: "30px", 
+                            margin: "auto 0px", 
+                            border: "none", 
+                            background: "none",
+                            cursor: "pointer"
+                        }} 
+                        type="button" 
+                        onClick={() => Logout()}
+                    >
+                        {Icons.logout}
+                    </button>
+                </WrapperMenuRight>
             </StyledHeader>
+            <ul>
+                {bookingsList.map( booking => 
+                <li key = {booking.id}>{Object.values(booking)}</li>)}
+            </ul>
         </Contenedor>
         </>
     );
