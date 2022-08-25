@@ -5,12 +5,12 @@ import { StyledHeader } from "../styles/StyledIcons";
 import { StyledImg } from "../styles/StyledImg";
 import { StyledLink } from "../styles/StyledLink";
 import { Icons } from "../styles/StyledIcons";
-import ArrayRooms from "../json/Bookings.json";
+import ArrayRooms from "../json/Bookings.json";                     // json son bookings
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext } from "react";
 import { AuthContext } from "../App";
 //import { BookingsList } from "../json/BookingsList"
-// rooms.json son bookings
+
 
 export const Rooms = (props) => {
     const { state, dispatch } = useContext(AuthContext);
@@ -21,9 +21,7 @@ export const Rooms = (props) => {
         navigate("/", { replace: true });
     };
     
-    let rooms = ArrayRooms;
-
-    //console.log(rooms)
+    let rooms = ArrayRooms;// json son bookings
     
     return (
       <>
@@ -91,7 +89,6 @@ export const Rooms = (props) => {
                 <ul>
                     {rooms.map( room => 
                     <li key = {room.id} >{Object.values(room)}</li>)}
-                    {/*rooms.map(room => (<li key={room.id}>{room}</li>))*/}
                 </ul>
             </div>
         </Contenedor>
