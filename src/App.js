@@ -198,10 +198,7 @@ export const AuthContext = createContext();
 function App() {
     const [state, dispatch] = useReducer(authReducer, initialUser);
     let navigate = useNavigate();
-    //const [displayLat, setDisplayLat] = useState("block");
 
-
-    //const [auth, setAuth] = useState(localStorage.getItem("auth") !== null);-------
     useEffect(() => {
         if (state.auth) {
             localStorage.setItem("auth", JSON.stringify(state));
