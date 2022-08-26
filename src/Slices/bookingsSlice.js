@@ -24,8 +24,8 @@ export const getBooking = createAsyncThunk(
 export const bookingsSlice = createSlice({
     name: 'bookings',
     initialState: {
-      allBookings: [],
-      booking: [],
+        allBookings: [],
+        booking: [],
     },
     reducers: {
         addBookings: (state, action) => {
@@ -50,12 +50,13 @@ export const bookingsSlice = createSlice({
             console.log(action.payload)
             //return void (state.booking = action.payload);
         });
-  }})
+    }
+})
   
-  export const { addBookings, editBooking, deleteBooking } = bookingsSlice.actions
+export const { addBookings, editBooking, deleteBooking } = bookingsSlice.actions
 
-  export const allBookingsArray = (state) => state.bookings.allBookings
-  export const oneBooking = (state) => state.bookings.booking
-  
+export const allBookingsArray = (state) => state.bookings.allBookings
+export const oneBooking = (state) => state.bookings.booking
 
-  export default bookingsSlice.reducer
+
+export default bookingsSlice.reducer
