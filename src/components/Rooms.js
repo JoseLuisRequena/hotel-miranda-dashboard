@@ -12,7 +12,7 @@ import { AuthContext } from "../App";
 //import { BookingsList } from "../json/BookingsList"
 
 
-export const Rooms = (props) => {
+export const Rooms = () => {
     const { state, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 

@@ -8,7 +8,7 @@ import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
-import { getAllBookings, allBookingsArray,oneBooking } from "../Slices/bookingsSlice";
+import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking } from "../Slices/bookingsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -28,9 +28,13 @@ export const Bookings = () => {
 
     useEffect(() => {
         dispatch2(getAllBookings());
-        console.log('desde booking', bookingsList );
     }, [])
+   
     
+    const deleteBooking = (id) => {
+        dispatch2(getBooking(id));
+    }
+
     return (
         <>
         <Contenedor>
@@ -46,6 +50,7 @@ export const Bookings = () => {
                     <StyledLink to="/contacts">Contacts</StyledLink><br/>
                 </div>
             </Nav> 
+            <div style={{display: "block", width: "100%"}}>
             <StyledHeader>
                 <h2>Bookings</h2>
                 <WrapperMenuRight>
@@ -92,8 +97,9 @@ export const Bookings = () => {
             </StyledHeader>
             <ul>
                 {bookingsList.map( booking => 
-                <li key = {booking.id}>{Object.values(booking)}</li>)}
+                <li key = {booking.id}>{booking.first_name}<button onClick={() => deleteBooking(booking.id)}>O</button></li>)}
             </ul>
+            </div>
         </Contenedor>
         </>
     );
