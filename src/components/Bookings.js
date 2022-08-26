@@ -15,13 +15,12 @@ import { useDispatch, useSelector } from "react-redux";
 export const Bookings = () => {
     
     // refactorizar a un componente
-     const { state, dispatch } = useContext(AuthContext);
-     const navigate = useNavigate();
-
-     const Logout = () => {
+    const { state, dispatch } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const Logout = () => {
          dispatch({ type: "logout" });
          navigate("/", { replace: true });
-     };
+    };
     //-------------------
     const dispatch2 = useDispatch();
     const bookingsList = useSelector(allBookingsArray);
@@ -31,7 +30,7 @@ export const Bookings = () => {
     }, [])
    
     
-    const deleteBooking = (id) => {
+    const seeBooking = (id) => {
         dispatch2(getBooking(id));
     }
 
@@ -97,7 +96,7 @@ export const Bookings = () => {
             </StyledHeader>
             <ul>
                 {bookingsList.map( booking => 
-                <li key = {booking.id}>{booking.first_name}<button onClick={() => deleteBooking(booking.id)}>O</button></li>)}
+                <li key = {booking.id}>{booking.first_name}<button onClick={() => seeBooking(booking.id)}>O</button></li>)}
             </ul>
             </div>
         </Contenedor>
