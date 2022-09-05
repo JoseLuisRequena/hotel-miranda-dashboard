@@ -8,7 +8,7 @@ import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
-import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking } from "../Slices/bookingsSlice";
+import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking, deleteOneBooking } from "../slices/bookingsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -24,13 +24,19 @@ export const Bookings = () => {
     //-------------------
     const dispatch2 = useDispatch();
     const bookingsList = useSelector(allBookingsArray);
+    const booking = useSelector(oneBooking);
+    
 
     useEffect(() => {
         dispatch2(getAllBookings());
     }, [])
    
     
+    const borrarBooking = (id) => {
+        dispatch2(deleteBooking(id));
+    }
     const seeBooking = (id) => {
+        console.log(id)
         dispatch2(getBooking(id));
     }
 
@@ -96,7 +102,13 @@ export const Bookings = () => {
             </StyledHeader>
             <ul>
                 {bookingsList.map( booking => 
-                <li key = {booking.id}>{booking.first_name}<button onClick={() => seeBooking(booking.id)}>O</button></li>)}
+                <li key = {booking.id}>{booking.first_name}<button onClick={() => borrarBooking(booking.id)}>delete</button>
+                <button onClick={() => seeBooking(booking.id)}>ver</button></li>)}
+            </ul>
+            
+            <ul>
+                    {booking.map( booking => 
+                    <li key = {booking.id} >{Object.values(booking)}</li>)}
             </ul>
             </div>
         </Contenedor>
