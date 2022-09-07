@@ -16,6 +16,9 @@ import { Icons, StyledHeader } from "./styles/StyledIcons";
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import './App.css';
 import { WrapperMenuRight } from "./styles/WrapperMenuRight";
+import BarChart from "./components/BarChart";
+import { WrapperPage } from "./styles/WrapperPage";
+import { Grid1_2, Grid2_3, WrapperGrid } from "./styles/WrapperGrid";
 
 
 function RequireAuth({children}) {
@@ -107,51 +110,61 @@ const Dashboard = () => {
                 <StyledLink to="/contacts">Contacts</StyledLink><br/>
             </div>
         </Nav>
-        <StyledHeader >
-            <h2>Dashboard</h2>
-            <WrapperMenuRight>
-            <button 
-                style={{
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button"
-            >
-                {Icons.enveloper}
-            </button>
-            <button 
-                style={{
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button"
-            >
-                {Icons.bell}
-            </button>
-            <button 
-                style={{
-                    width: "40px", 
-                    height: "30px", 
-                    margin: "auto 0px", 
-                    border: "none", 
-                    background: "none",
-                    cursor: "pointer"
-                }} 
-                type="button" 
-                onClick={() => Logout() }
-            >
-                {Icons.logout}
-            </button>
-            </WrapperMenuRight>
-        </StyledHeader>
+        <WrapperPage>
+            <StyledHeader >
+                <h2>Dashboard</h2>
+                <WrapperMenuRight>
+                <button 
+                    style={{
+                        width: "40px", 
+                        height: "30px", 
+                        margin: "auto 0px", 
+                        border: "none", 
+                        background: "none",
+                        cursor: "pointer"
+                    }} 
+                    type="button"
+                >
+                    {Icons.enveloper}
+                </button>
+                <button 
+                    style={{
+                        width: "40px", 
+                        height: "30px", 
+                        margin: "auto 0px", 
+                        border: "none", 
+                        background: "none",
+                        cursor: "pointer"
+                    }} 
+                    type="button"
+                >
+                    {Icons.bell}
+                </button>
+                <button 
+                    style={{
+                        width: "40px", 
+                        height: "30px", 
+                        margin: "auto 0px", 
+                        border: "none", 
+                        background: "none",
+                        cursor: "pointer"
+                    }} 
+                    type="button" 
+                    onClick={() => Logout() }
+                >
+                    {Icons.logout}
+                </button>
+                </WrapperMenuRight>
+            </StyledHeader>
+                <WrapperGrid>
+                    <Grid1_2>
+                        {/*<Calendar/>*/}
+                    </Grid1_2>
+                    <Grid2_3>
+                        <BarChart />
+                    </Grid2_3>
+                </WrapperGrid>
+        </WrapperPage>
     </Contenedor>
   );  
 }
