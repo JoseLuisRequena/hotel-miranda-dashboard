@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useState } from "react";
 import { AuthContext } from "../App";
 import { StyledButton } from "../styles/StyledButton";
@@ -6,12 +7,16 @@ import { StyledImg } from "../styles/StyledImg";
 import { StyledInput } from "../styles/StyledInput";
 import { StyledLogin } from "../styles/StyledLogin";
 
+/*------------------------ejemplos----------------------------*/
+
+/*------------------------ejemplos----------------------------*/
+
 export default function Login() {
     const { dispatch } = useContext(AuthContext);
     const [user, setUser] = useState("Admin");
     const [password, setpassword] = useState("Admin");
-  
-    const adminUser ={
+
+    const adminUser = {
         name: "Admin",
         email: "Admin@Admin.com",
         password: "Admin"
@@ -25,7 +30,7 @@ export default function Login() {
     const handleSubmit = (event) => {
       event.preventDefault();
       if (user === adminUser.name && password === adminUser.password) {
-        dispatch({ type: "login", user: adminData });
+        dispatch({ type: "login", payload: adminData });
       }
     };
 
@@ -34,10 +39,10 @@ export default function Login() {
                 <StyledImg/>
             <StyledForm 
                 onSubmit={handleSubmit}
-                user={user}
+                /*user={user}
                 setUser={setUser}
                 password={password}
-                setpassword={setpassword}
+                setpassword={setpassword}*/
             >
                 <label>
                     <StyledInput  

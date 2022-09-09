@@ -4,48 +4,14 @@ import { Rooms } from "./components/Rooms";
 import { Users } from "./components/Users"
 import { Contacts } from "./components/Contacts";
 import { Room } from "./components/Room";
-import Login from "./components/Login";
+import Login from "./components/Login.tsx";
 import Dashboard from "./components/Dashboard";
 import { createContext, useEffect, useReducer } from "react";
 import './App.css';
-import RequireAuth from "./components/RequireAuth";
+import RequireAuth from "./components/RequireAuth.tsx";
+import { authReducer } from "./components/AuthReducer.tsx";
 
 const initialUser = localStorage.getItem("auth") ? JSON.parse(localStorage.getItem("auth")) : { auth:false, name: null, email:null };
-
-const authReducer = (state, action) => {
-    switch (action.type) {
-      case "login":
-        localStorage.setItem("auth", "true");
-        return {
-          ...state,
-          auth: true,
-          name: action.user.AdminName,
-          email: action.user.AdminEmail,
-        };
-      case "logout":
-        localStorage.removeItem("auth");
-        return {
-          ...state,
-          auth: false,
-          name: null,
-          email: null,
-        };
-      case "changeName":
-        localStorage.setItem("auth", JSON.stringify(state));
-        return {
-          ...state,
-          name: action.name,
-        };
-      case "changeEmail":
-        localStorage.setItem("auth", JSON.stringify(state));
-        return {
-          ...state,
-          email: action.email,
-        };
-      default:
-        return state;
-    }
-};
 
 export const AuthContext = createContext();
 
