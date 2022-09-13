@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction, createAction } from "@reduxjs/toolkit";
 import arrayBookingsJson from "../json/Bookings.json";
 import type { RootState } from '../store'
 
@@ -43,20 +43,24 @@ const initialState: IBookingsState = {
     allBookings: [],
     booking: {},
 };
-// Define the initial state using that type
+
+const getAllBookingsR = createAction<Array<IBooking>>('getAllBookingsR');
+const getBookingR = createAction<IBooking>('getBookingR');
+const deleteBookingR = createAction<Array<IBooking>>('deleteBookingR');
+
 
 export const bookingsSlice = createSlice({
     name: 'bookings',
     initialState,
     reducers: {
-        //addBookings: (state, action: PayloadAction<IBooking>) => {
-        //    return void state.allBookings.push(action.payload);
-        //},
-        //editBooking: (state, action: PayloadAction<IBooking>) => {
-        //    return state.allBookings.map((booking: IBooking) =>
-        //      booking.id === action.payload.id ? action.payload : booking
-        //    );
-        //},
+        addBookings:(state, action: PayloadAction<IBooking>) => {
+            state.allBookings.push(action.payload)
+        },
+        editBooking: (state, action: PayloadAction<IBooking>) => {
+            state.allBookings.map((booking: IBooking) =>
+              booking.id === action.payload.id ? action.payload : booking
+            );
+        },
         //deleteBooking: (state, action) => {
         //    console.log(state)
         //    return state.filter((booking) => booking.id !== action.payload.id);
@@ -64,14 +68,14 @@ export const bookingsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-        .addCase(getAllBookings.fulfilled, (state, action: PayloadAction<Array<IBooking>>) => {
+        .addCase(getAllBookingsR, (state, action) => {
             state.allBookings = action.payload;
+          })
+        .addCase(getBookingR, (state, action) => {
+            state.booking = action.payload;
         })
-        .addCase(getBooking.fulfilled, (state, action: PayloadAction<IBooking>) => {
-            return void (state.booking = action.payload);
-        })
-        .addCase(deleteBooking.fulfilled, (state, action: PayloadAction<Array<IBooking>>) => {
-            return void (state.allBookings = action.payload);
+        .addCase(deleteBookingR, (state, action) => {
+            state.allBookings = action.payload;
         });
 
     }
