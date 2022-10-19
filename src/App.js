@@ -1,11 +1,11 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Bookings } from "./components/Bookings";
-import { Rooms } from "./components/Rooms";
-import { Users } from "./components/Users"
-import { Contacts } from "./components/Contacts";
+import { Bookings } from "./pages/Bookings";
+import { Rooms } from "./pages/Rooms";
+import { Users } from "./pages/Users"
+import { Contacts } from "./pages/Contacts";
 import { Room } from "./components/Room";
-import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import { createContext, useEffect, useReducer } from "react";
 import './App.css';
 import RequireAuth from "./components/RequireAuth";

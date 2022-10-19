@@ -22,10 +22,41 @@ export default function Login() {
         AdminEmail: adminUser.email
     } 
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
       event.preventDefault();
-      if (user === adminUser.name && password === adminUser.password) {
-        dispatch({ type: "login", user: adminData });
+      //if (user === adminUser.name && password === adminUser.password) {
+      //  dispatch({ type: "login", user: adminData });
+      //}
+      try {
+        const options = {
+            method: 'POST',
+            body: 
+                JSON.stringify({
+                  username: "Admin",
+                  password: "Admin"
+                }),
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        };
+        const res = await fetch('http://localhost:3001/login', options);
+        console.log(res);
+        if (res.token) {
+            console.log('se conecto')
+            dispatch({ type: "login", value: {user: adminData, token: res.token} });
+        //  dispatchAuth({
+        //    type: 'LOGIN',
+        //    value: {
+        //        email: inputs.email,
+        //        token: res.token,
+            }//,
+        //  });
+        //  navigate(from, { replace: true });
+        //}
+      } catch (err) {
+        alert('Login failed');
+        //e.target.reset();
       }
     };
 
