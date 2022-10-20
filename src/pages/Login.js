@@ -10,53 +10,34 @@ export default function Login() {
     const { dispatch } = useContext(AuthContext);
     const [user, setUser] = useState("Admin");
     const [password, setpassword] = useState("Admin");
-  
-    const adminUser ={
-        name: "Admin",
-        email: "Admin@Admin.com",
-        password: "Admin"
-    }
-
-    const adminData = {
-        AdminName: adminUser.name,
-        AdminEmail: adminUser.email
-    } 
 
     const handleSubmit = async (event) => {
       event.preventDefault();
-      //if (user === adminUser.name && password === adminUser.password) {
-      //  dispatch({ type: "login", user: adminData });
-      //}
       try {
         const options = {
             method: 'POST',
             body: 
                 JSON.stringify({
-                  username: "Admin",
-                  password: "Admin"
+                  username: user,
+                  password: password
                 }),
-            mode: 'no-cors',
             headers: {
               'Content-Type': 'application/json'
             },
         };
-        const res = await fetch('http://localhost:3001/login', options);
-        console.log(res);
+        const response = await fetch('http://localhost:3001/login', options);
+        const res = await response.json();
         if (res.token) {
-            console.log('se conecto')
-            dispatch({ type: "login", value: {user: adminData, token: res.token} });
-        //  dispatchAuth({
-        //    type: 'LOGIN',
-        //    value: {
-        //        email: inputs.email,
-        //        token: res.token,
-            }//,
-        //  });
-        //  navigate(from, { replace: true });
-        //}
+            dispatch({ 
+                type: "login",
+                user, 
+                password, 
+                token: res.token
+            });
+        }
       } catch (err) {
-        alert('Login failed');
-        //e.target.reset();
+          event.target.reset('');
+          alert('Login failed');
       }
     };
 
