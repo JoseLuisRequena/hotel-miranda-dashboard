@@ -8,6 +8,7 @@ import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import User from "../components/User";
 
 export const Users = () => {
     const { state, dispatch } = useContext(AuthContext);
@@ -32,6 +33,7 @@ export const Users = () => {
                         <StyledLink to="/users">Users</StyledLink><br/>
                         <StyledLink to="/contacts">Contacts</StyledLink><br/>
                     </div>
+                    <User/>
                 </Nav> 
                 <StyledHeader>
                     <h2>Users</h2>

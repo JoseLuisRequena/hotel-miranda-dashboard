@@ -15,6 +15,7 @@ import Calendar from "../components/Calendar";
 import icons from "../styles/StyledImgs";
 import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
+import User from "../components/User";
 
 
 export default function Dashboard() {
@@ -83,6 +84,7 @@ export default function Dashboard() {
                 <StyledLink to="/users">Users</StyledLink><br/>
                 <StyledLink to="/contacts">Contacts</StyledLink><br/>
             </div>
+            <User/>
         </Nav>
         <WrapperPage>
             <StyledHeader >

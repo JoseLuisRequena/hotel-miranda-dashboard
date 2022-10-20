@@ -19,8 +19,8 @@ const authReducer = (state, action) => {
         return {
           ...state,
           auth: true,
-          name: action.user.AdminName,
-          email: action.user.AdminEmail,
+          name: action.user,
+          email: action.email,
         };
       case "logout":
         localStorage.removeItem("auth");
