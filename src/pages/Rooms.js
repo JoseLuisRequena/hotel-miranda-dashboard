@@ -5,24 +5,135 @@ import { StyledHeader } from "../styles/StyledIcons";
 import { StyledImg } from "../styles/StyledImg";
 import { StyledLink } from "../styles/StyledLink";
 import { Icons } from "../styles/StyledIcons";
-import ArrayRooms from "../json/Bookings.json";                     // json son bookings
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../App";
 import User from "../components/User";
-//import { BookingsList } from "../json/BookingsList"
+import styled from "styled-components";
+import { allRoomsArray, deleteRoom, getAllRooms, getRoom, oneRoom } from "../slices/roomsSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+const Tr =styled.tr`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height:92px;
+  background-color: #fff;
+  &:hover {
+    border: 1px solid;
+    box-shadow: 0 0 10px 5px #0000001A;
+  }
+`;
+const Td = styled.td`
+  width: 180px;
+`;
+const TdSmall = styled.td`
+  width: 100px;
+`;
+const ButtonView = styled.button`
+  background-color: #eef9f2;
+  width: 100px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  ::before {
+    content: "View Notes";
+  }
+`;
+
+const ButtonDelete = styled.button`
+  background-color: #eef9f2;
+  width: 38px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  ::before {
+    content: "X";
+  }
+`;
+
+const Button = styled.button`
+  width: 100px;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const colors = {
+    green: '#799283',
+    hardGreen: '#135846',
+    lightGreen: '#EBF1EF',
+    red: '#E23428',
+    lightRed: '#FFEDEC',
+    light: '#B2B2B2',
+    bgGray: '#F8F8F8',
+    gray: '#6E6E6E',
+    borderGray: '#D4D4D4',
+};
+
+function ButtonStatus(props) {
+  const status = props.status;
+  let color;
+  let background;
+  let offer = '';
+  if (status === "Available" || status ) {
+    color = colors.hardGreen;
+    background = colors.lightGreen;
+    offer = 'offer'
+  } else if (status === "Booked" || !status ) {
+    color = colors.red;
+    background = colors.lightRed;
+    offer = 'not offer'
+  } else {   
+    color = "#FF9C3A";
+    background = "#fff8ba" ;
+  }
+  return <Button style={{ backgroundColor: background, color: color }}>{offer}</Button>;
+}
 
 
 export const Rooms = () => {
-    const { state, dispatch } = useContext(AuthContext);
+    const { dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const Logout = () => {
         dispatch({ type: "logout" });
         navigate("/", { replace: true });
     };
-    
-    let rooms = ArrayRooms;// json son bookings
+
+    const dispatch2 = useDispatch();
+    const roomsList = useSelector(allRoomsArray);
+    //const room = useSelector(oneRoom);
+
+    useEffect(() => {
+        dispatch2(getAllRooms());
+    }, []);
+
+    const borrarRoom = (id) => {
+        dispatch2(deleteRoom(id));
+    }
+    //const seeRoom = (id) => {
+    //    console.log(id)
+    //    dispatch2(getRoom(id));
+    //}
+
+    //let rooms = ArrayRooms;// json son bookings
     
     return (
       <>
@@ -87,11 +198,37 @@ export const Rooms = () => {
                         </button>
                     </WrapperMenuRight>
                 </StyledHeader>
-                
                 <ul>
+                    {roomsList.map( 
+                        room => (
+                            <Tr key={room.room}>
+                                <Td>
+                                    {room.room}
+                                    <br />
+                                    {room.type}
+                                </Td>
+                                <TdSmall>Room Floor</TdSmall>
+                                <Td>
+                                    {room.amenites}
+                                </Td>
+                                <Td>
+                                    {room.price/100}
+                                </Td>
+                                <TdSmall>
+
+                                    <ButtonStatus status={room.offer}></ButtonStatus>
+                                </TdSmall>
+                                <TdSmall>
+                                    <ButtonDelete onClick={() => borrarRoom(room.room)}/>
+                                </TdSmall>
+                            </Tr>
+                        )                
+                    )}
+                </ul>
+                {/*<ul>
                     {rooms.map( room => 
                     <li key = {room.id} >{Object.values(room)}</li>)}
-                </ul>
+                    </ul>*/}
             </div>
         </Contenedor>
       </>

@@ -16,6 +16,7 @@ import icons from "../styles/StyledImgs";
 import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
 import User from "../components/User";
+import { Contact } from "../components/Contact";
 
 
 export default function Dashboard() {
@@ -31,11 +32,11 @@ export default function Dashboard() {
         const vacants = roomsData.filter((room) => {
           let bool = true;
           bookingsData.forEach((booking) => {
-            if (booking.id === room.id) bool = false;
+            if (booking.status == 'checkin' && booking.id === room.room) bool = false;
           });
           return bool;
         });
-        const percentage = `${100 - (Math.round((vacants.length * 100) / roomsData.length))} %`;
+        const percentage = `${100 - (Math.round((vacants.length * 100) / roomsData.length))} %`; 
         return percentage;
     };
     
@@ -146,6 +147,7 @@ export default function Dashboard() {
                     <BarChart />
                 </Grid2_3>
             </WrapperGrid>
+            <Contact/>
         </WrapperPage>
     </Contenedor>
   );  
