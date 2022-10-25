@@ -1,5 +1,6 @@
 [{
-    "name": "Haze Whisson",
+  "id": 1,  
+  "name": "Haze Whisson",
     "puesto": "Research and Development",
     "email": "hwhisson0@mozilla.org",
     "phone": "475-334-2492",
@@ -9,6 +10,7 @@
     "password": "dq5fTSGhmvym",
     "photo": "https://robohash.org/inenimquo.png?size=150x150&set=set1"
   }, {
+    "id": 2,
     "name": "Cloris Carress",
     "puesto": "Legal",
     "email": "ccarress1@businessinsider.com",
@@ -19,6 +21,7 @@
     "password": "FX2M7GXpgp",
     "photo": "https://robohash.org/molestiaehicpraesentium.png?size=150x150&set=set1"
   }, {
+    "id": 3,
     "name": "Land Monsey",
     "puesto": "Accounting",
     "email": "lmonsey2@state.tx.us",
@@ -29,6 +32,7 @@
     "password": "MjGzRHQziz1",
     "photo": "https://robohash.org/ducimusautemquas.png?size=150x150&set=set1"
   }, {
+    "id": 4,
     "name": "Kingsley Flooks",
     "puesto": "Support",
     "email": "kflooks3@netscape.com",
@@ -39,6 +43,7 @@
     "password": "WUDIG9FN",
     "photo": "https://robohash.org/quifaciliseos.png?size=150x150&set=set1"
   }, {
+    "id": 5,
     "name": "Aubine Giffard",
     "puesto": "Services",
     "email": "agiffard4@vistaprint.com",
@@ -49,6 +54,7 @@
     "password": "ReghwXynGsy",
     "photo": "https://robohash.org/eosquisquammagnam.png?size=150x150&set=set1"
   }, {
+    "id": 6,
     "name": "Kittie Pollendine",
     "puesto": "Human Resources",
     "email": "kpollendine5@edublogs.org",
@@ -59,6 +65,7 @@
     "password": "IrIvhlnc8PH",
     "photo": "https://robohash.org/quisquampariaturet.png?size=150x150&set=set1"
   }, {
+    "id": 7,
     "name": "Margarethe Huntingford",
     "puesto": "Marketing",
     "email": "mhuntingford6@ifeng.com",
@@ -69,6 +76,7 @@
     "password": "9s9pXQJ",
     "photo": "https://robohash.org/asperioresaperiamlaborum.png?size=150x150&set=set1"
   }, {
+    "id": 8,
     "name": "Trumann Alenov",
     "puesto": "Research and Development",
     "email": "talenov7@vimeo.com",
@@ -79,6 +87,7 @@
     "password": "wnKJMB",
     "photo": "https://robohash.org/itaquearchitectodignissimos.png?size=150x150&set=set1"
   }, {
+    "id": 9,
     "name": "Giordano Riep",
     "puesto": "Sales",
     "email": "griep8@cdbaby.com",
@@ -89,6 +98,7 @@
     "password": "QXLNAEPVh",
     "photo": "https://robohash.org/fugitnonsimilique.png?size=150x150&set=set1"
   }, {
+    "id": 10,
     "name": "Corene Grzelczyk",
     "puesto": "Services",
     "email": "cgrzelczyk9@irs.gov",

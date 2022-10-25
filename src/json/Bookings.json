@@ -68,8 +68,8 @@
     "reservation_date": "5/16/2022",
     "checkIn": "8/13/2022",
     "checkOut": "8/19/2022",
-    "status": "checkoin",
-    "typeRoom": "Mysterians, The (Chikyu Boeigun)"
+    "status": "checkin",
+    "typeRoom": "Mysterians"
   }, {
     "id": 9,
     "first_name": "Cherlyn",
@@ -77,7 +77,7 @@
     "reservation_date": "6/7/2022",
     "checkIn": "8/9/2022",
     "checkOut": "8/26/2022",
-    "status": "checkoin",
+    "status": "checkin",
     "typeRoom": "China Moon"
   }, {
     "id": 10,
@@ -105,7 +105,7 @@
     "checkIn": "8/14/2022",
     "checkOut": "8/27/2022",
     "status": "checkout",
-    "typeRoom": "Sidewalks of London (St. Martin's Lane)"
+    "typeRoom": "Sidewalks of London"
   }, {
     "id": 13,
     "first_name": "Julina",
@@ -132,7 +132,7 @@
     "checkIn": "8/6/2022",
     "checkOut": "8/16/2022",
     "status": "checkout",
-    "typeRoom": "Conman (Du Xia 1999)"
+    "typeRoom": "Conman"
   }, {
     "id": 16,
     "first_name": "Brianne",
@@ -195,7 +195,7 @@
     "checkIn": "8/14/2022",
     "checkOut": "8/16/2022",
     "status": "checkout",
-    "typeRoom": "Smash-Up: The Story of a Woman"
+    "typeRoom": "Smash-Up"
   }, {
     "id": 23,
     "first_name": "Kelbee",
@@ -204,7 +204,7 @@
     "checkIn": "8/5/2022",
     "checkOut": "8/24/2022",
     "status": "checkout",
-    "typeRoom": "Return of the Musketeers, The"
+    "typeRoom": "Return of the Musketeers"
   }, {
     "id": 24,
     "first_name": "Alexandrina",
@@ -231,7 +231,7 @@
     "checkIn": "8/7/2022",
     "checkOut": "8/28/2022",
     "status": "checkout",
-    "typeRoom": "Friday the 13th Part V: A New Beginning"
+    "typeRoom": "Friday the 13th Part V"
   }, {
     "id": 27,
     "first_name": "Claribel",
@@ -240,7 +240,7 @@
     "checkIn": "8/9/2022",
     "checkOut": "8/23/2022",
     "status": "checkout",
-    "typeRoom": "Pearls of the Deep (Perlicky na dne)"
+    "typeRoom": "Pearls of the Deep"
   }, {
     "id": 28,
     "first_name": "Appolonia",
@@ -267,7 +267,7 @@
     "checkIn": "8/9/2022",
     "checkOut": "8/27/2022",
     "status": "checkout",
-    "typeRoom": "Diary of a Country Priest (Journal d'un curé de campagne)"
+    "typeRoom": "Diary of a Country Priest"
   }
 ]
   
