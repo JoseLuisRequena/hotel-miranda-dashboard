@@ -9,6 +9,8 @@ import { useContext } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import User from "../components/User";
+import { Contact } from "../components/Contact";
+import { WrapperPage } from "../styles/WrapperPage";
 
 
 export const Contacts = () => {
@@ -36,52 +38,54 @@ export const Contacts = () => {
                     </div>
                     <User/>
                 </Nav> 
-
-                <StyledHeader>
-                    <h2>Contacts</h2>
-                    <WrapperMenuRight>
-                        <button 
-                            style={{ 
-                                width: "40px", 
-                                height: "30px", 
-                                margin: "auto 0px", 
-                                border: "none", 
-                                background: "none",
-                                cursor: "pointer"
-                            }} 
+                <WrapperPage>
+                    <StyledHeader>
+                        <h2>Contacts</h2>
+                        <WrapperMenuRight>
+                            <button 
+                                style={{ 
+                                    width: "40px", 
+                                    height: "30px", 
+                                    margin: "auto 0px", 
+                                    border: "none", 
+                                    background: "none",
+                                    cursor: "pointer"
+                                }} 
+                                type="button"
+                            >
+                                {Icons.enveloper}
+                            </button>
+                            <button 
+                                style={{
+                                    width: "40px", 
+                                    height: "30px", 
+                                    margin: "auto 0px", 
+                                    border: "none", 
+                                    background: "none",
+                                    cursor: "pointer"
+                                }} 
                             type="button"
-                        >
-                            {Icons.enveloper}
-                        </button>
-                        <button 
-                            style={{
-                                width: "40px", 
-                                height: "30px", 
-                                margin: "auto 0px", 
-                                border: "none", 
-                                background: "none",
-                                cursor: "pointer"
-                            }} 
-                        type="button"
-                        >
-                            {Icons.bell}
-                        </button>
-                        <button 
-                            style={{
-                                width: "40px", 
-                                height: "30px", 
-                                margin: "auto 0px", 
-                                border: "none", 
-                                background: "none",
-                                cursor: "pointer"
-                            }}
-                            type="button" 
-                            onClick={() => Logout()}
-                        >
-                            {Icons.logout}
-                        </button>
-                    </WrapperMenuRight>
-                </StyledHeader>
+                            >
+                                {Icons.bell}
+                            </button>
+                            <button 
+                                style={{
+                                    width: "40px", 
+                                    height: "30px", 
+                                    margin: "auto 0px", 
+                                    border: "none", 
+                                    background: "none",
+                                    cursor: "pointer"
+                                }}
+                                type="button" 
+                                onClick={() => Logout()}
+                            >
+                                {Icons.logout}
+                            </button>
+                        </WrapperMenuRight>
+                    </StyledHeader>
+                    <Contact/>
+                </WrapperPage>
             </Contenedor>
         </>
     )
