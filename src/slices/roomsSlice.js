@@ -25,7 +25,7 @@ export const getRoom = createAsyncThunk(
 export const deleteRoom = createAsyncThunk(
     'rooms/deleteRooms',
     async (id) => {
-        return delay(arrayRooms.filter(item => item.id !== id), 3000);
+        return delay(arrayRooms.filter(item => item.room !== id), 3000);
     }
 );
 
