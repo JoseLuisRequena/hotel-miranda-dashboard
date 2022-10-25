@@ -9,6 +9,7 @@ import ArrayRooms from "../json/Bookings.json";                     // json son 
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext } from "react";
 import { AuthContext } from "../App";
+import User from "../components/User";
 //import { BookingsList } from "../json/BookingsList"
 
 
@@ -37,6 +38,7 @@ export const Rooms = () => {
                     <StyledLink to="/users">Users</StyledLink><br/>
                     <StyledLink to="/contacts">Contacts</StyledLink><br/>
                 </div>
+                <User/>
             </Nav> 
             <div style={{display: "block", width: "100%"}}>
                 <StyledHeader>

@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking, deleteOneBooking } from "../slices/bookingsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import User from "../components/User";
 
 
 export const Bookings = () => {
@@ -54,6 +55,7 @@ export const Bookings = () => {
                     <StyledLink to="/users">Users</StyledLink><br/>
                     <StyledLink to="/contacts">Contacts</StyledLink><br/>
                 </div>
+                <User/>
             </Nav> 
             <div style={{display: "block", width: "100%"}}>
             <StyledHeader>

@@ -8,24 +8,39 @@ import { StyledLogin } from "../styles/StyledLogin";
 
 export default function Login() {
     const { dispatch } = useContext(AuthContext);
-    const [user, setUser] = useState("Admin");
-    const [password, setpassword] = useState("Admin");
-  
-    const adminUser ={
-        name: "Admin",
-        email: "Admin@Admin.com",
-        password: "Admin"
-    }
+    const [user, setUser] = useState("");
+    const [password, setpassword] = useState("");
 
-    const adminData = {
-        AdminName: adminUser.name,
-        AdminEmail: adminUser.email
-    } 
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
       event.preventDefault();
-      if (user === adminUser.name && password === adminUser.password) {
-        dispatch({ type: "login", user: adminData });
+      try {
+        const options = {
+            method: 'POST',
+            body: 
+                JSON.stringify({
+                  username: user,
+                  password: password,
+                }),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        };
+        const response = await fetch('http://localhost:3001/login', options);
+        const email= user + '@Miranda.com'
+        const res = await response.json();
+        if (res.token) {
+            dispatch({ 
+                type: "login",
+                user, 
+                password,
+                email,
+                token: res.token
+            });
+        }
+      } catch (err) {
+          event.target.reset('');
+          alert('Login failed');
       }
     };
 

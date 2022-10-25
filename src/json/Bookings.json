@@ -5,6 +5,7 @@
     "reservation_date": "6/4/2022",
     "checkIn": "8/7/2022",
     "checkOut": "8/17/2022",
+    "status": "checkin",
     "typeRoom": "American Friends"
   }, {
     "id": 2,
@@ -13,6 +14,7 @@
     "reservation_date": "5/30/2022",
     "checkIn": "8/12/2022",
     "checkOut": "8/18/2022",
+    "status": "checkout",
     "typeRoom": "Bowling for Columbine"
   }, {
     "id": 3,
@@ -21,6 +23,7 @@
     "reservation_date": "7/29/2022",
     "checkIn": "8/7/2022",
     "checkOut": "8/25/2022",
+    "status": "checkout",
     "typeRoom": "The Real Glory"
   }, {
     "id": 4,
@@ -29,6 +32,7 @@
     "reservation_date": "6/30/2022",
     "checkIn": "8/4/2022",
     "checkOut": "8/25/2022",
+    "status": "checkin",
     "typeRoom": "Punisher: War Zone"
   }, {
     "id": 5,
@@ -37,6 +41,7 @@
     "reservation_date": "6/22/2022",
     "checkIn": "8/14/2022",
     "checkOut": "8/27/2022",
+    "status": "checkin",
     "typeRoom": "Foolish"
   }, {
     "id": 6,
@@ -45,6 +50,7 @@
     "reservation_date": "6/15/2022",
     "checkIn": "8/13/2022",
     "checkOut": "8/26/2022",
+    "status": "checkout",
     "typeRoom": "Secret Ceremony"
   }, {
     "id": 7,
@@ -53,6 +59,7 @@
     "reservation_date": "7/31/2022",
     "checkIn": "8/13/2022",
     "checkOut": "8/27/2022",
+    "status": "checkin",
     "typeRoom": "Inspector General, The"
   }, {
     "id": 8,
@@ -61,7 +68,8 @@
     "reservation_date": "5/16/2022",
     "checkIn": "8/13/2022",
     "checkOut": "8/19/2022",
-    "typeRoom": "Mysterians, The (Chikyu Boeigun)"
+    "status": "checkin",
+    "typeRoom": "Mysterians"
   }, {
     "id": 9,
     "first_name": "Cherlyn",
@@ -69,6 +77,7 @@
     "reservation_date": "6/7/2022",
     "checkIn": "8/9/2022",
     "checkOut": "8/26/2022",
+    "status": "checkin",
     "typeRoom": "China Moon"
   }, {
     "id": 10,
@@ -77,6 +86,7 @@
     "reservation_date": "5/26/2022",
     "checkIn": "8/11/2022",
     "checkOut": "8/30/2022",
+    "status": "checkout",
     "typeRoom": "Nuts"
   }, {
     "id": 11,
@@ -85,6 +95,7 @@
     "reservation_date": "5/19/2022",
     "checkIn": "8/4/2022",
     "checkOut": "8/30/2022",
+    "status": "checkout",
     "typeRoom": "True Crime"
   }, {
     "id": 12,
@@ -93,7 +104,8 @@
     "reservation_date": "6/23/2022",
     "checkIn": "8/14/2022",
     "checkOut": "8/27/2022",
-    "typeRoom": "Sidewalks of London (St. Martin's Lane)"
+    "status": "checkout",
+    "typeRoom": "Sidewalks of London"
   }, {
     "id": 13,
     "first_name": "Julina",
@@ -101,6 +113,7 @@
     "reservation_date": "7/22/2022",
     "checkIn": "8/7/2022",
     "checkOut": "8/22/2022",
+    "status": "checkout",
     "typeRoom": "Morgan Stewart's Coming Home"
   }, {
     "id": 14,
@@ -109,6 +122,7 @@
     "reservation_date": "7/7/2022",
     "checkIn": "8/13/2022",
     "checkOut": "8/29/2022",
+    "status": "checkout",
     "typeRoom": "Doubting Thomas"
   }, {
     "id": 15,
@@ -117,7 +131,8 @@
     "reservation_date": "7/3/2022",
     "checkIn": "8/6/2022",
     "checkOut": "8/16/2022",
-    "typeRoom": "Conman (Du Xia 1999)"
+    "status": "checkout",
+    "typeRoom": "Conman"
   }, {
     "id": 16,
     "first_name": "Brianne",
@@ -125,6 +140,7 @@
     "reservation_date": "7/27/2022",
     "checkIn": "8/9/2022",
     "checkOut": "8/22/2022",
+    "status": "checkout",
     "typeRoom": "Nocturna Artificialia"
   }, {
     "id": 17,
@@ -133,6 +149,7 @@
     "reservation_date": "7/13/2022",
     "checkIn": "8/12/2022",
     "checkOut": "8/29/2022",
+    "status": "checkout",
     "typeRoom": "Amorosa"
   }, {
     "id": 18,
@@ -141,6 +158,7 @@
     "reservation_date": "7/12/2022",
     "checkIn": "8/11/2022",
     "checkOut": "8/16/2022",
+    "status": "checkout",
     "typeRoom": "Facing the Giants"
   }, {
     "id": 19,
@@ -149,6 +167,7 @@
     "reservation_date": "6/7/2022",
     "checkIn": "8/7/2022",
     "checkOut": "8/19/2022",
+    "status": "checkout",
     "typeRoom": "Business, The"
   }, {
     "id": 20,
@@ -157,6 +176,7 @@
     "reservation_date": "7/27/2022",
     "checkIn": "8/13/2022",
     "checkOut": "8/30/2022",
+    "status": "checkout",
     "typeRoom": "Muddy River"
   }, {
     "id": 21,
@@ -165,6 +185,7 @@
     "reservation_date": "6/6/2022",
     "checkIn": "8/14/2022",
     "checkOut": "8/22/2022",
+    "status": "checkout",
     "typeRoom": "Phoenix"
   }, {
     "id": 22,
@@ -173,7 +194,8 @@
     "reservation_date": "5/19/2022",
     "checkIn": "8/14/2022",
     "checkOut": "8/16/2022",
-    "typeRoom": "Smash-Up: The Story of a Woman"
+    "status": "checkout",
+    "typeRoom": "Smash-Up"
   }, {
     "id": 23,
     "first_name": "Kelbee",
@@ -181,7 +203,8 @@
     "reservation_date": "5/23/2022",
     "checkIn": "8/5/2022",
     "checkOut": "8/24/2022",
-    "typeRoom": "Return of the Musketeers, The"
+    "status": "checkout",
+    "typeRoom": "Return of the Musketeers"
   }, {
     "id": 24,
     "first_name": "Alexandrina",
@@ -189,6 +212,7 @@
     "reservation_date": "7/17/2022",
     "checkIn": "8/6/2022",
     "checkOut": "8/28/2022",
+    "status": "checkout",
     "typeRoom": "Painted Lady"
   }, {
     "id": 25,
@@ -197,6 +221,7 @@
     "reservation_date": "6/13/2022",
     "checkIn": "8/6/2022",
     "checkOut": "8/20/2022",
+    "status": "checkout",
     "typeRoom": "Wrath of God, The"
   }, {
     "id": 26,
@@ -205,7 +230,8 @@
     "reservation_date": "6/9/2022",
     "checkIn": "8/7/2022",
     "checkOut": "8/28/2022",
-    "typeRoom": "Friday the 13th Part V: A New Beginning"
+    "status": "checkout",
+    "typeRoom": "Friday the 13th Part V"
   }, {
     "id": 27,
     "first_name": "Claribel",
@@ -213,7 +239,8 @@
     "reservation_date": "7/10/2022",
     "checkIn": "8/9/2022",
     "checkOut": "8/23/2022",
-    "typeRoom": "Pearls of the Deep (Perlicky na dne)"
+    "status": "checkout",
+    "typeRoom": "Pearls of the Deep"
   }, {
     "id": 28,
     "first_name": "Appolonia",
@@ -221,6 +248,7 @@
     "reservation_date": "5/24/2022",
     "checkIn": "8/8/2022",
     "checkOut": "8/24/2022",
+    "status": "checkout",
     "typeRoom": "Broadway Melody of 1938"
   }, {
     "id": 29,
@@ -229,6 +257,7 @@
     "reservation_date": "6/15/2022",
     "checkIn": "8/11/2022",
     "checkOut": "8/28/2022",
+    "status": "checkout",
     "typeRoom": "Ringu 0: Bâsudei"
   }, {
     "id": 30,
@@ -237,7 +266,8 @@
     "reservation_date": "5/23/2022",
     "checkIn": "8/9/2022",
     "checkOut": "8/27/2022",
-    "typeRoom": "Diary of a Country Priest (Journal d'un curé de campagne)"
+    "status": "checkout",
+    "typeRoom": "Diary of a Country Priest"
   }
 ]
   

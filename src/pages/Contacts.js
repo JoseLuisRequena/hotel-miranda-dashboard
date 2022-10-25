@@ -1,15 +1,17 @@
 import { Contenedor } from "../styles/Contenedor";
 import { Nav } from "../styles/Nav";
-import { StyledHeader } from "../styles/StyledIcons";
 import { StyledImg } from "../styles/StyledImg";
 import { StyledLink } from "../styles/StyledLink";
+import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import User from "../components/User";
 
-export const Users = () => {
+
+export const Contacts = () => {
     const { state, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ export const Users = () => {
         navigate("/", { replace: true });
     };
 
-    return (
+    return(
         <>
             <Contenedor>
                 <Nav>
@@ -32,9 +34,11 @@ export const Users = () => {
                         <StyledLink to="/users">Users</StyledLink><br/>
                         <StyledLink to="/contacts">Contacts</StyledLink><br/>
                     </div>
+                    <User/>
                 </Nav> 
+
                 <StyledHeader>
-                    <h2>Users</h2>
+                    <h2>Contacts</h2>
                     <WrapperMenuRight>
                         <button 
                             style={{ 
@@ -50,7 +54,7 @@ export const Users = () => {
                             {Icons.enveloper}
                         </button>
                         <button 
-                            style={{ 
+                            style={{
                                 width: "40px", 
                                 height: "30px", 
                                 margin: "auto 0px", 
@@ -58,20 +62,20 @@ export const Users = () => {
                                 background: "none",
                                 cursor: "pointer"
                             }} 
-                            type="button"
+                        type="button"
                         >
                             {Icons.bell}
                         </button>
                         <button 
-                            style={{ 
+                            style={{
                                 width: "40px", 
                                 height: "30px", 
                                 margin: "auto 0px", 
                                 border: "none", 
                                 background: "none",
                                 cursor: "pointer"
-                            }} 
-                            type="button"
+                            }}
+                            type="button" 
                             onClick={() => Logout()}
                         >
                             {Icons.logout}
@@ -80,5 +84,5 @@ export const Users = () => {
                 </StyledHeader>
             </Contenedor>
         </>
-    );
+    )
 }

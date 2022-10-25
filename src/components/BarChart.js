@@ -14,6 +14,7 @@ const ChartWrapper = styled.div`
   box-shadow: 0px 4px 4px #00000005;
   border-radius: 10px;
   width: 100%;
+  min-width: 490px;
   background-color: #fff;
   height: auto;
   text-align: center;
@@ -26,8 +27,6 @@ const ChartWrapper = styled.div`
 const ChartLegend = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 30px;
-  margin-right: 10%;
 `;
 const LegendData = styled.div`
   display: flex;
@@ -67,7 +66,7 @@ export default function BarChart() {
             bottom: 20, 
             left: 45 
         };
-        const width = 550 - margin.left - margin.right;
+        const width = 500 - margin.left - margin.right;
         const height = 300 - margin.top - margin.bottom;
         const subgroups = [
             "sales", 
