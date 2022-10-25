@@ -9,13 +9,13 @@ export const WrapperGrid = styled.div`
         display: block;
         margin: 20px auto;
       }
-`
+`;
 
 export const Grid2_3 = styled.div`
     grid-column-start: 2;
     grid-column-end: 3;
-`
+`;
 export const Grid1_2 = styled.div`
     grid-column-start: 1;
     grid-column-end: 2;
-`
+`;
