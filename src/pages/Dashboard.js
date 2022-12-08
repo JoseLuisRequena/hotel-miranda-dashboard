@@ -2,10 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import { Contenedor } from "../styles/Contenedor";
-import { Nav } from "../styles/Nav";
 import { Icons, StyledHeader } from "../styles/StyledIcons";
-import { StyledImg } from "../styles/StyledImg";
-import { StyledLink } from "../styles/StyledLink";
 import { Grid1_2, Grid2_3, WrapperGrid } from "../styles/WrapperGrid";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { WrapperPage } from "../styles/WrapperPage";
@@ -15,8 +12,8 @@ import Calendar from "../components/Calendar";
 import icons from "../styles/StyledImgs";
 import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
-import User from "../components/User";
 import { Contact } from "../components/Contact";
+import MenuNav from "../components/MenuNav";
 
 
 export default function Dashboard() {
@@ -74,19 +71,7 @@ export default function Dashboard() {
 
   return (
     <Contenedor>
-        <Nav>
-            <div>
-               <StyledImg />
-            </div>
-            <div>
-                <StyledLink to="/dashboard">Dashboard</StyledLink><br/>
-                <StyledLink to="/bookings">Bookings</StyledLink><br/>
-                <StyledLink to="/rooms">Rooms</StyledLink><br/>
-                <StyledLink to="/users">Users</StyledLink><br/>
-                <StyledLink to="/contacts">Contacts</StyledLink><br/>
-            </div>
-            <User/>
-        </Nav>
+        <MenuNav/>
         <WrapperPage>
             <StyledHeader >
                 <h2>Dashboard</h2>

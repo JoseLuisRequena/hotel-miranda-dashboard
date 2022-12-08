@@ -1,17 +1,14 @@
 import { Contenedor } from "../styles/Contenedor";
-import { Nav } from "../styles/Nav";
 import { StyledHeader } from "../styles/StyledIcons";
-import { StyledImg } from "../styles/StyledImg";
-import { StyledLink } from "../styles/StyledLink";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
-import User from "../components/User";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { allUsersArray, deleteUser, getAllUsers } from "../slices/usersSlice";
+import MenuNav from "../components/MenuNav";
 
 const Tr =styled.tr`
   display: flex;
@@ -130,19 +127,7 @@ export const Users = () => {
     return (
         <>
             <Contenedor>
-                <Nav>
-                    <div>
-                        <StyledImg />
-                    </div>
-                    <div>
-                        <StyledLink to="/dashboard">Dashboard</StyledLink><br/>
-                        <StyledLink to="/bookings">Bookings</StyledLink><br/>
-                        <StyledLink to="/rooms">Rooms</StyledLink><br/>
-                        <StyledLink to="/users">Users</StyledLink><br/>
-                        <StyledLink to="/contacts">Contacts</StyledLink><br/>
-                    </div>
-                    <User/>
-                </Nav> 
+                <MenuNav/>
                 <div style={{display: "block", width: "100%"}}>
                     <StyledHeader>
                         <h2>Users</h2>

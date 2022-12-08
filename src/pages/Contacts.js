@@ -1,16 +1,13 @@
 import { Contenedor } from "../styles/Contenedor";
-import { Nav } from "../styles/Nav";
-import { StyledImg } from "../styles/StyledImg";
-import { StyledLink } from "../styles/StyledLink";
 import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
-import User from "../components/User";
 import { Contact } from "../components/Contact";
 import { WrapperPage } from "../styles/WrapperPage";
+import MenuNav from "../components/MenuNav";
 
 
 export const Contacts = () => {
@@ -25,19 +22,7 @@ export const Contacts = () => {
     return(
         <>
             <Contenedor>
-                <Nav>
-                    <div>
-                        <StyledImg />
-                    </div>
-                    <div>
-                        <StyledLink to="/dashboard">Dashboard</StyledLink><br/>
-                        <StyledLink to="/bookings">Bookings</StyledLink><br/>
-                        <StyledLink to="/rooms">Rooms</StyledLink><br/>
-                        <StyledLink to="/users">Users</StyledLink><br/>
-                        <StyledLink to="/contacts">Contacts</StyledLink><br/>
-                    </div>
-                    <User/>
-                </Nav> 
+                <MenuNav/>
                 <WrapperPage>
                     <StyledHeader>
                         <h2>Contacts</h2>
