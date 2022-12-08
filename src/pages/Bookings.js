@@ -1,7 +1,4 @@
 import { Contenedor } from "../styles/Contenedor";
-import { Nav } from "../styles/Nav";
-import { StyledImg } from "../styles/StyledImg";
-import { StyledLink } from "../styles/StyledLink";
 import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
@@ -10,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking, deleteOneBooking } from "../slices/bookingsSlice";
 import { useDispatch, useSelector } from "react-redux";
-import User from "../components/User";
 import styled from "styled-components";
+import MenuNav from "../components/MenuNav";
 
 const Tr =styled.tr`
   display: flex;
@@ -135,19 +132,7 @@ export const Bookings = () => {
     return (
         <>
         <Contenedor>
-            <Nav>
-                <div>
-                    <StyledImg />
-                </div>
-                <div>
-                    <StyledLink to="/dashboard">Dashboard</StyledLink><br/>
-                    <StyledLink to="/bookings">Bookings</StyledLink><br/>
-                    <StyledLink to="/rooms">Rooms</StyledLink><br/>
-                    <StyledLink to="/users">Users</StyledLink><br/>
-                    <StyledLink to="/contacts">Contacts</StyledLink><br/>
-                </div>
-                <User/>
-            </Nav> 
+            <MenuNav/>
             <div style={{display: "block", width: "100%"}}>
             <StyledHeader>
                 <h2>Bookings</h2>
