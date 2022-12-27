@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { ReactComponent as BellIcon } from "../imgs/iconBell.svg";
+import { ReactComponent as BookingsIcon } from "../imgs/iconBookings.svg"
+import { ReactComponent as CheckIn } from "../imgs/iconCheckIn.svg"
+import { ReactComponent as CheckOut } from "../imgs/iconCheckOut.svg"
 
 const Icon = styled.i`
   min-width: 48px;
@@ -20,7 +23,7 @@ const Icon = styled.i`
 
 const icons = {
     //dashboard: <Icon><DashboardIcon /></Icon>,
-    //bookings: <Icon><BookingsIcon /></Icon>,
+    bookings: <Icon><BookingsIcon /></Icon>,
     //rooms: <Icon><RoomsIcon /></Icon>,
     //contact: <Icon><ContactIcon /></Icon>,
     //users: <Icon><UsersIcon /></Icon>,
@@ -29,8 +32,8 @@ const icons = {
     bell: <Icon><BellIcon /></Icon>,
     //logout: <Icon><LogoutIcon /></Icon>,
     //bed: <Icon><Bed /></Icon>,
-    //checkIn: <Icon><CheckIn /></Icon>,
-    //checkOut: <Icon><CheckOut /></Icon>,
+    checkIn: <Icon><CheckIn /></Icon>,
+    checkOut: <Icon><CheckOut /></Icon>,
     //cancel: <Icon><Cancel /></Icon>,
     //checkCircle: <Icon><CheckCircle /></Icon>,
     //leftArrow: <Icon><LeftArrow /></Icon>,

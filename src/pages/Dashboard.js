@@ -120,9 +120,9 @@ export default function Dashboard() {
             </StyledHeader>
             <KpiRow style = {{margin: "20px" }}>
                 <Kpi data={{ icon: icons.bell, number: bookingsData.length, text: 'New Booking' }} />
-                <Kpi data={{ icon: icons.bell, number: getOccupationPercentage(), text: 'Occupation' }} />
-                <Kpi data={{ icon: icons.bell, number: getCheckIns(), text: 'Check In' }} />
-                <Kpi data={{ icon: icons.bell, number: getCheckOuts(), text: 'Check Out' }} />
+                <Kpi data={{ icon: icons.bookings, number: getOccupationPercentage(), text: 'Occupation' }} />
+                <Kpi data={{ icon: icons.checkIn, number: getCheckIns(), text: 'Check In' }} />
+                <Kpi data={{ icon: icons.checkOut, number: getCheckOuts(), text: 'Check Out' }} />
             </KpiRow>
             <WrapperGrid>
                 <Grid1_2>
