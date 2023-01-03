@@ -2,7 +2,7 @@ import { Contenedor } from "../styles/Contenedor";
 import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking, deleteOneBooking } from "../slices/bookingsSlice";
@@ -129,12 +129,16 @@ export const Bookings = () => {
         dispatch2(getBooking(id));
     }
 
+    const [open, setOpen] = useState(true);
+    const handleOpen = () => open ? setOpen(false) : setOpen(true);
+    
     return (
         <>
         <Contenedor>
-            <MenuNav/>
+            <MenuNav open = {open}/>
             <div style={{display: "block", width: "100%"}}>
             <StyledHeader>
+                <button onClick = { handleOpen } >X</button>
                 <h2>Bookings</h2>
                 <WrapperMenuRight>
                     <button 
