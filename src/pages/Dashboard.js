@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import { Contenedor } from "../styles/Contenedor";
@@ -29,7 +29,7 @@ export default function Dashboard() {
         const vacants = roomsData.filter((room) => {
           let bool = true;
           bookingsData.forEach((booking) => {
-            if (booking.status == 'checkin' && booking.id === room.room) bool = false;
+            if (booking.status === 'checkin' && booking.id === room.room) bool = false;
           });
           return bool;
         });
@@ -68,12 +68,15 @@ export default function Dashboard() {
         ],
     };
     
-
+    const [open, setOpen] = useState(true);
+    const handleOpen = () => open ? setOpen(false) : setOpen(true);
+    
   return (
     <Contenedor>
-        <MenuNav/>
+        <MenuNav open = {open}/>
         <WrapperPage>
             <StyledHeader >
+                <button onClick = { handleOpen } >X</button>
                 <h2>Dashboard</h2>
                 <WrapperMenuRight>
                 <button 

@@ -2,7 +2,7 @@ import { Contenedor } from "../styles/Contenedor";
 import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Contact } from "../components/Contact";
@@ -19,12 +19,16 @@ export const Contacts = () => {
         navigate("/", { replace: true });
     };
 
+    const [open, setOpen] = useState(true);
+    const handleOpen = () => open ? setOpen(false) : setOpen(true);
+    
     return(
         <>
             <Contenedor>
-                <MenuNav/>
+                <MenuNav open = {open}/>
                 <WrapperPage>
                     <StyledHeader>
+                        <button onClick={ handleOpen }>X</button>
                         <h2>Contacts</h2>
                         <WrapperMenuRight>
                             <button 
