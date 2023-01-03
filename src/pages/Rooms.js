@@ -3,7 +3,7 @@ import { Contenedor } from "../styles/Contenedor";
 import { StyledHeader } from "../styles/StyledIcons";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../App";
 import styled from "styled-components";
 import { allRoomsArray, deleteRoom, getAllRooms, getRoom, oneRoom } from "../slices/roomsSlice";
@@ -132,12 +132,16 @@ export const Rooms = () => {
 
     //let rooms = ArrayRooms;// json son bookings
     
+    const [open, setOpen] = useState(true);
+    const handleOpen = () => open ? setOpen(false) : setOpen(true);
+    
     return (
       <>
         <Contenedor>
-            <MenuNav/>
+            <MenuNav open = {open}/>
             <div style={{display: "block", width: "100%"}}>
                 <StyledHeader>
+                    <button onClick = { handleOpen } >X</button>
                     <h2>Rooms</h2>
                     
                     <WrapperMenuRight>
