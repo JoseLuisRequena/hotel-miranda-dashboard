@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Contact } from "../components/Contact";
 import { WrapperPage } from "../styles/WrapperPage";
 import MenuNav from "../components/MenuNav";
+import { ButtonMenuNav } from "../styles/StyledButton";
 
 
 export const Contacts = () => {
@@ -28,7 +29,7 @@ export const Contacts = () => {
                 <MenuNav open = {open}/>
                 <WrapperPage>
                     <StyledHeader>
-                        <button onClick={ handleOpen }>X</button>
+                    <ButtonMenuNav onClick = { handleOpen } >X</ButtonMenuNav>
                         <h2>Contacts</h2>
                         <WrapperMenuRight>
                             <button 

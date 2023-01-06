@@ -14,6 +14,7 @@ import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
 import { Contact } from "../components/Contact";
 import MenuNav from "../components/MenuNav";
+import { ButtonMenuNav } from "../styles/StyledButton";
 
 
 export default function Dashboard() {
@@ -76,7 +77,7 @@ export default function Dashboard() {
         <MenuNav open = {open}/>
         <WrapperPage>
             <StyledHeader >
-                <button onClick = { handleOpen } >X</button>
+                <ButtonMenuNav onClick = { handleOpen } >X</ButtonMenuNav>
                 <h2>Dashboard</h2>
                 <WrapperMenuRight>
                 <button 
