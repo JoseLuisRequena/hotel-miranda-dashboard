@@ -9,7 +9,7 @@ import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState, ButtonView } from "../styles/StyledButton";
+import { ButtonDelete, ButtonMenuNav, ButtonState, ButtonView } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;

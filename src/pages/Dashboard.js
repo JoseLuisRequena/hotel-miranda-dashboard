@@ -14,7 +14,7 @@ import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
 import { Contact } from "../components/Contact";
 import MenuNav from "../components/MenuNav";
-import { ButtonMenuNav } from "../styles/StyledButton";
+import { ButtonMenuNav } from "../styles/StyledButtons";
 
 
 export default function Dashboard() {

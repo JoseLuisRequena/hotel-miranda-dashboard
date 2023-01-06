@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../App";
-import { StyledButton } from "../styles/StyledButton";
+import { StyledButton } from "../styles/StyledButtons";
 import { StyledForm } from "../styles/StyledForm";
 import { StyledImg } from "../styles/StyledImg";
 import { StyledInput } from "../styles/StyledInput";

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Contact } from "../components/Contact";
 import { WrapperPage } from "../styles/WrapperPage";
 import MenuNav from "../components/MenuNav";
-import { ButtonMenuNav } from "../styles/StyledButton";
+import { ButtonMenuNav } from "../styles/StyledButtons";
 
 
 export const Contacts = () => {

@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { allUsersArray, deleteUser, getAllUsers } from "../slices/usersSlice";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState } from "../styles/StyledButton";
+import { ButtonDelete, ButtonMenuNav, ButtonState } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;
