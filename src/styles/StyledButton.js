@@ -12,3 +12,34 @@ export const StyledButton = styled.button`
     background:#1358466b;
   }
 `;
+export const ButtonContact = styled.button`
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  width: 158px;
+  height: 47px;
+  background: #ebf1ee;
+  color: #135846;
+  border-radius: 8px;
+  border: none;
+  margin-top: 5px;
+  &:hover {
+    filter: brightness(0.97);
+  }
+`;
+
+export const ButtonMenuNav = styled.button`
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  width: 30px;
+  height: 40px;
+  background: #ebf1ee;
+  color: #135846;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  margin: auto 0;
+  &:hover {
+    filter: brightness(0.8);
+  }
+`;
