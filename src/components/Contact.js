@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { StyledButton } from "../styles/StyledButton";
 import arrayContacts from "../json/Contacts.json"
 
 const colors = {

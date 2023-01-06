@@ -3,7 +3,6 @@ import Modal from "@mui/material/Modal";
 import { useContext, useState } from "react";
 import { AuthContext } from "../App";
 import styled from "styled-components";
-import { StyledButton } from "../styles/StyledButton";
 
 const style = {
 

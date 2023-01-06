@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { allRoomsArray, deleteRoom, getAllRooms, getRoom, oneRoom } from "../slices/roomsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState } from "../styles/StyledButton";
+import { ButtonDelete, ButtonMenuNav, ButtonState } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;

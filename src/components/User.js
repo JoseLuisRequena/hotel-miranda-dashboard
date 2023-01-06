@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
 import { AuthContext } from "../App";
+import { ButtonContact } from "../styles/StyledButtons";
 import ModalEditUser from "./ModalEditUser";
+import ModalFrom from "./ModalForm";
 
 const UserWrapper = styled.div`
   width: 200px;
@@ -37,27 +39,30 @@ const UserEmail = styled.span`
   font-weight: 300;
   font-family: "Poppins", sans-serif;
 `;
-const ButtonContact = styled.button`
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  width: 158px;
-  height: 47px;
-  background: #ebf1ee;
-  color: #135846;
-  border-radius: 8px;
-  border: none;
-  margin-top: 5px;
-  &:hover {
-    filter: brightness(0.97);
-  }
-`;
-export default function User(props){
+//const ButtonContact = styled.button`
+//  font-size: 14px;
+//  font-weight: 600;
+//  font-family: "Poppins", sans-serif;
+//  width: 158px;
+//  height: 47px;
+//  background: #ebf1ee;
+//  color: #135846;
+//  border-radius: 8px;
+//  border: none;
+//  margin-top: 5px;
+//  &:hover {
+//    filter: brightness(0.97);
+//  }
+//`;
+export default function User(){
     const { state } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
+    //const [openForm, setOpenForm] = useState(false);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    //const handleOpenForm = () => setOpenForm(true);
+    //const handleCloseForm = () => setOpenForm(false);
 
     return(
         <div>
@@ -68,6 +73,8 @@ export default function User(props){
                 <ButtonContact onClick={handleOpen}>Edit</ButtonContact>
                 <ModalEditUser open={open} handleClose={handleClose} />
             </UserWrapper>
+                {/*<ButtonContact onClick={handleOpenForm}>Edit</ButtonContact>
+                <ModalFrom  open={openForm} handleClose={handleCloseForm} />*/}
         </div>
     )
-}
+} 
