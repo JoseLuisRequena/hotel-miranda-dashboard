@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { allUsersArray, deleteUser, getAllUsers } from "../slices/usersSlice";
 import MenuNav from "../components/MenuNav";
-import { ButtonMenuNav } from "../styles/StyledButton";
+import { ButtonDelete, ButtonMenuNav, ButtonState } from "../styles/StyledButton";
 
 const Tr =styled.tr`
   display: flex;
@@ -27,50 +27,6 @@ const Td = styled.td`
 `;
 const TdSmall = styled.td`
   width: 100px;
-`;
-const ButtonView = styled.button`
-  background-color: #eef9f2;
-  width: 100px;
-  height: 48px;
-  border-radius: 12px;
-  border: none;
-  margin-right: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  ::before {
-    content: "View Notes";
-  }
-`;
-
-const ButtonDelete = styled.button`
-  background-color: #eef9f2;
-  width: 38px;
-  height: 48px;
-  border-radius: 12px;
-  border: none;
-  margin-right: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  ::before {
-    content: "X";
-  }
-`;
-
-const Button = styled.button`
-  width: 100px;
-  height: 48px;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const colors = {
@@ -102,7 +58,7 @@ function ButtonStatus(props) {
     color = "#FF9C3A";
     background = "#fff8ba" ;
   }
-  return <Button style={{ backgroundColor: background, color: color }}>{offer}</Button>;
+  return <ButtonState style={{ backgroundColor: background, color: color }}>{offer}</ButtonState>;
 }
 
 export const Users = () => {
@@ -204,7 +160,7 @@ export const Users = () => {
                                 </Td>
                                 <TdSmall>
 
-                                    <ButtonStatus status={user.state}></ButtonStatus>
+                                    <ButtonStatus status={user.state}/>
                                 </TdSmall>
                                 <TdSmall>
                                     <ButtonDelete onClick={() => borrarUser(user.id)}/>

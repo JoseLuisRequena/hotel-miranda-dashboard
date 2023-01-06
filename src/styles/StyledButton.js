@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
     background:#1358466b;
   }
 `;
+
 export const ButtonContact = styled.button`
   font-size: 14px;
   font-weight: 600;
@@ -25,6 +26,51 @@ export const ButtonContact = styled.button`
   margin-top: 5px;
   &:hover {
     filter: brightness(0.97);
+  }
+`;
+
+export const ButtonView = styled.button`
+  background-color: #eef9f2;
+  width: 100px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  ::before {
+    content: "View Notes";
+  }
+`;
+
+export const ButtonState = styled.button`
+width: 100px;
+height: 48px;
+border: none;
+border-radius: 12px;
+color: white;
+font-family: "Poppins", sans-serif;
+font-size: 14px;
+display: flex;
+justify-content: center;
+align-items: center;
+`;
+
+export const ButtonDelete = styled.button`
+  background-color: #eef9f2;
+  width: 38px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  ::before {
+    content: "X";
   }
 `;
 
