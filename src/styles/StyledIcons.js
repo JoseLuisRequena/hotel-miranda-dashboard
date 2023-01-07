@@ -41,6 +41,5 @@ export const Icons = {
     logout: <Icon><LogoutIcon /></Icon>,
     bell: <Icon><BellIcon /></Icon>,
     enveloper: <Icon><EnvelopeIcon /></Icon>,
-    arrows: <Icon><ArrowsIcon /></Icon>
-
+    arrows: <Icon><ArrowsIcon/></Icon>
   };
