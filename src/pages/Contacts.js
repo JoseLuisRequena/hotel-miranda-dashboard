@@ -29,7 +29,7 @@ export const Contacts = () => {
                 <MenuNav open = {open}/>
                 <WrapperPage>
                     <StyledHeader>
-                    <ButtonMenuNav onClick = { handleOpen } >X</ButtonMenuNav>
+                    <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                         <h2>Contacts</h2>
                         <WrapperMenuRight>
                             <button 

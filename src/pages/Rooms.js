@@ -98,7 +98,7 @@ export const Rooms = () => {
             <MenuNav open = {open}/>
             <div style={{display: "block", width: "100%"}}>
                 <StyledHeader>
-                <ButtonMenuNav onClick = { handleOpen } >X</ButtonMenuNav>
+                <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                     <h2>Rooms</h2>
                     
                     <WrapperMenuRight>

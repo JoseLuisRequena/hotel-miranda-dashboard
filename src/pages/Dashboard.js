@@ -77,7 +77,7 @@ export default function Dashboard() {
         <MenuNav open = {open}/>
         <WrapperPage>
             <StyledHeader >
-                <ButtonMenuNav onClick = { handleOpen } >X</ButtonMenuNav>
+                <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                 <h2>Dashboard</h2>
                 <WrapperMenuRight>
                 <button 
