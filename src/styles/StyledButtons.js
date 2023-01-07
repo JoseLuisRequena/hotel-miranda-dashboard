@@ -85,7 +85,9 @@ export const ButtonMenuNav = styled.button`
   border-radius: 0 20px 20px 0;
   border: none;
   margin: auto 0;
+  padding: 0 10px 0 0;
   &:hover {
     filter: brightness(0.8);
+    width: 45px;
   }
 `;
