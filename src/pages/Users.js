@@ -90,7 +90,7 @@ export const Users = () => {
                 <MenuNav open = {open}/>
                 <div style={{display: "block", width: "100%"}}>
                     <StyledHeader>
-                    <ButtonMenuNav onClick = { handleOpen } >X</ButtonMenuNav>
+                    <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                         <h2>Users</h2>
                         <WrapperMenuRight>
                             <button 
