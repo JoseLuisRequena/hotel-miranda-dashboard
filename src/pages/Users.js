@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { allUsersArray, deleteUser, getAllUsers } from "../slices/usersSlice";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState } from "../styles/StyledButtons";
+import { ButtonDelete, ButtonMenuNav, ButtonState, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;
@@ -90,7 +90,9 @@ export const Users = () => {
                 <MenuNav open = {open}/>
                 <div style={{display: "block", width: "100%"}}>
                     <StyledHeader>
-                    <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                        <WrapperButtonMenuNav>
+                            <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                        </WrapperButtonMenuNav>
                         <h2>Users</h2>
                         <WrapperMenuRight>
                             <button 

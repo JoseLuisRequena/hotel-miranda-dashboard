@@ -9,7 +9,7 @@ import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState, ButtonView } from "../styles/StyledButtons";
+import { ButtonDelete, ButtonMenuNav, ButtonState, ButtonView, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;
@@ -95,7 +95,9 @@ export const Bookings = () => {
             <MenuNav open = {open}/>
             <div style={{display: "block", width: "100%"}}>
             <StyledHeader>
-            <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                <WrapperButtonMenuNav>
+                    <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                </WrapperButtonMenuNav>
                 <h2>Bookings</h2>
                 <WrapperMenuRight>
                     <button 
