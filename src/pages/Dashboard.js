@@ -14,7 +14,7 @@ import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
 import { Contact } from "../components/Contact";
 import MenuNav from "../components/MenuNav";
-import { ButtonMenuNav } from "../styles/StyledButtons";
+import { ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 
 export default function Dashboard() {
@@ -48,26 +48,26 @@ export default function Dashboard() {
       return checkOuts.length;
     };
     
-    const data = {
-        sales: [
-          { day: '08/22/2022', value: 2500 },
-          { day: '08/23/2022', value: 3000 },
-          { day: '08/24/2022', value: 1100 },
-          { day: '08/25/2022', value: 800 },
-          { day: '08/26/2022', value: 2850 },
-          { day: '08/27/2022', value: 4673 },
-          { day: '08/28/2022', value: 3857 },
-        ],
-        occupation: [
-          { day: '08/22/2022', value: 20 },
-          { day: '08/23/2022', value: 32 },
-          { day: '08/24/2022', value: 38 },
-          { day: '08/25/2022', value: 30 },
-          { day: '08/26/2022', value: 67 },
-          { day: '08/27/2022', value: 89 },
-          { day: '08/28/2022', value: 70 },
-        ],
-    };
+    //const data = {
+    //    sales: [
+    //      { day: '08/22/2022', value: 2500 },
+    //      { day: '08/23/2022', value: 3000 },
+    //      { day: '08/24/2022', value: 1100 },
+    //      { day: '08/25/2022', value: 800 },
+    //      { day: '08/26/2022', value: 2850 },
+    //      { day: '08/27/2022', value: 4673 },
+    //      { day: '08/28/2022', value: 3857 },
+    //    ],
+    //    occupation: [
+    //      { day: '08/22/2022', value: 20 },
+    //      { day: '08/23/2022', value: 32 },
+    //      { day: '08/24/2022', value: 38 },
+    //      { day: '08/25/2022', value: 30 },
+    //      { day: '08/26/2022', value: 67 },
+    //      { day: '08/27/2022', value: 89 },
+    //      { day: '08/28/2022', value: 70 },
+    //    ],
+    //};
     
     const [open, setOpen] = useState(true);
     const handleOpen = () => open ? setOpen(false) : setOpen(true);
@@ -77,7 +77,9 @@ export default function Dashboard() {
         <MenuNav open = {open}/>
         <WrapperPage>
             <StyledHeader >
-                <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                <WrapperButtonMenuNav>
+                    <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                </WrapperButtonMenuNav>
                 <h2>Dashboard</h2>
                 <WrapperMenuRight>
                 <button 
