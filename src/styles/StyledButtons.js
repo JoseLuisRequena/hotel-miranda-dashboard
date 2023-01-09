@@ -75,19 +75,21 @@ export const ButtonDelete = styled.button`
 `;
 
 export const ButtonMenuNav = styled.button`
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
   width: 30px;
   height: 40px;
   background: #ebf1ee;
   color: #135846;
   border-radius: 0 20px 20px 0;
   border: none;
-  margin: auto 0;
   padding: 0 10px 0 0;
   &:hover {
+    cursor: pointer;
     filter: brightness(0.8);
     width: 45px;
   }
+`;
+export const WrapperButtonMenuNav = styled.div`
+display: flex;
+width: 50px;
+margin: auto 0;
 `;
