@@ -88,8 +88,18 @@ export const ButtonMenuNav = styled.button`
     width: 45px;
   }
 `;
+
 export const WrapperButtonMenuNav = styled.div`
-display: flex;
-width: 50px;
-margin: auto 0;
+  display: flex;
+  width: 50px;
+  margin: auto 0;
+`;
+
+export const ButtonIcon = styled.button`
+  width: 40px;
+  height: 30px;
+  margin: auto 0; 
+  border: none; 
+  background: none;
+  cursor: pointer;
 `;
