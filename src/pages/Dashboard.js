@@ -14,7 +14,7 @@ import roomsData from "../json/Rooms.json"
 import bookingsData from "../json/Bookings.json"
 import { Contact } from "../components/Contact";
 import MenuNav from "../components/MenuNav";
-import { ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { ButtonIcon, ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 
 export default function Dashboard() {
@@ -82,46 +82,11 @@ export default function Dashboard() {
                 </WrapperButtonMenuNav>
                 <h2>Dashboard</h2>
                 <WrapperMenuRight>
-                <button 
-                    style={{
-                        width: "40px", 
-                        height: "30px", 
-                        margin: "auto 0px", 
-                        border: "none", 
-                        background: "none",
-                        cursor: "pointer"
-                    }} 
-                    type="button"
-                >
-                    {Icons.enveloper}
-                </button>
-                <button 
-                    style={{
-                        width: "40px", 
-                        height: "30px", 
-                        margin: "auto 0px", 
-                        border: "none", 
-                        background: "none",
-                        cursor: "pointer"
-                    }} 
-                    type="button"
-                >
-                    {Icons.bell}
-                </button>
-                <button 
-                    style={{
-                        width: "40px", 
-                        height: "30px", 
-                        margin: "auto 0px", 
-                        border: "none", 
-                        background: "none",
-                        cursor: "pointer"
-                    }} 
-                    type="button" 
-                    onClick={() => Logout() }
-                >
-                    {Icons.logout}
-                </button>
+
+                    <ButtonIcon > {Icons.enveloper} </ButtonIcon>
+                    <ButtonIcon > {Icons.bell} </ButtonIcon>
+                    <ButtonIcon onClick={() => Logout() }> {Icons.logout} </ButtonIcon>
+                
                 </WrapperMenuRight>
             </StyledHeader>
             <KpiRow style = {{margin: "20px" }}>

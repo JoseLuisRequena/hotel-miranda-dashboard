@@ -9,7 +9,7 @@ import { getAllBookings, allBookingsArray, oneBooking, deleteBooking, getBooking
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState, ButtonView, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { ButtonDelete, ButtonIcon, ButtonMenuNav, ButtonState, ButtonView, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;
@@ -100,45 +100,11 @@ export const Bookings = () => {
                 </WrapperButtonMenuNav>
                 <h2>Bookings</h2>
                 <WrapperMenuRight>
-                    <button 
-                        style={{ 
-                            width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                        }} 
-                        type="button"
-                    >
-                        {Icons.enveloper}
-                    </button>
-                    <button 
-                        style={{ 
-                            width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                        }} 
-                        type="button"
-                        >
-                            {Icons.bell}
-                        </button>
-                    <button 
-                        style={{ width: "40px", 
-                            height: "30px", 
-                            margin: "auto 0px", 
-                            border: "none", 
-                            background: "none",
-                            cursor: "pointer"
-                        }} 
-                        type="button" 
-                        onClick={() => Logout()}
-                    >
-                        {Icons.logout}
-                    </button>
+                    
+                    <ButtonIcon > {Icons.enveloper} </ButtonIcon>
+                    <ButtonIcon > {Icons.bell} </ButtonIcon>
+                    <ButtonIcon onClick={() => Logout() }> {Icons.logout} </ButtonIcon>
+                
                 </WrapperMenuRight>
             </StyledHeader>
             <ul>

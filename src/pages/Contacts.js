@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Contact } from "../components/Contact";
 import { WrapperPage } from "../styles/WrapperPage";
 import MenuNav from "../components/MenuNav";
-import { ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { ButtonIcon, ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 
 export const Contacts = () => {
@@ -34,46 +34,11 @@ export const Contacts = () => {
                         </WrapperButtonMenuNav>
                         <h2>Contacts</h2>
                         <WrapperMenuRight>
-                            <button 
-                                style={{ 
-                                    width: "40px", 
-                                    height: "30px", 
-                                    margin: "auto 0px", 
-                                    border: "none", 
-                                    background: "none",
-                                    cursor: "pointer"
-                                }} 
-                                type="button"
-                            >
-                                {Icons.enveloper}
-                            </button>
-                            <button 
-                                style={{
-                                    width: "40px", 
-                                    height: "30px", 
-                                    margin: "auto 0px", 
-                                    border: "none", 
-                                    background: "none",
-                                    cursor: "pointer"
-                                }} 
-                            type="button"
-                            >
-                                {Icons.bell}
-                            </button>
-                            <button 
-                                style={{
-                                    width: "40px", 
-                                    height: "30px", 
-                                    margin: "auto 0px", 
-                                    border: "none", 
-                                    background: "none",
-                                    cursor: "pointer"
-                                }}
-                                type="button" 
-                                onClick={() => Logout()}
-                            >
-                                {Icons.logout}
-                            </button>
+                            
+                            <ButtonIcon > {Icons.enveloper} </ButtonIcon>
+                            <ButtonIcon > {Icons.bell} </ButtonIcon>
+                            <ButtonIcon onClick={() => Logout() }> {Icons.logout} </ButtonIcon>
+                
                         </WrapperMenuRight>
                     </StyledHeader>
                     <Contact/>
