@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { allUsersArray, deleteUser, getAllUsers } from "../slices/usersSlice";
 import MenuNav from "../components/MenuNav";
-import { ButtonDelete, ButtonMenuNav, ButtonState, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { ButtonDelete, ButtonIcon, ButtonMenuNav, ButtonState, WrapperButtonMenuNav } from "../styles/StyledButtons";
 
 const Tr =styled.tr`
   display: flex;
@@ -95,46 +95,11 @@ export const Users = () => {
                         </WrapperButtonMenuNav>
                         <h2>Users</h2>
                         <WrapperMenuRight>
-                            <button 
-                                style={{ 
-                                    width: "40px", 
-                                    height: "30px", 
-                                    margin: "auto 0px", 
-                                    border: "none", 
-                                    background: "none",
-                                    cursor: "pointer"
-                                }} 
-                                type="button"
-                            >
-                                {Icons.enveloper}
-                            </button>
-                            <button 
-                                style={{ 
-                                    width: "40px", 
-                                    height: "30px", 
-                                    margin: "auto 0px", 
-                                    border: "none", 
-                                    background: "none",
-                                    cursor: "pointer"
-                                }} 
-                                type="button"
-                            >
-                                {Icons.bell}
-                            </button>
-                            <button 
-                                style={{ 
-                                    width: "40px", 
-                                    height: "30px", 
-                                    margin: "auto 0px", 
-                                    border: "none", 
-                                    background: "none",
-                                    cursor: "pointer"
-                                }} 
-                                type="button"
-                                onClick={() => Logout()}
-                            >
-                                {Icons.logout}
-                            </button>
+                            
+                            <ButtonIcon > {Icons.enveloper} </ButtonIcon>
+                            <ButtonIcon > {Icons.bell} </ButtonIcon>
+                            <ButtonIcon onClick={() => Logout() }> {Icons.logout} </ButtonIcon>
+                
                         </WrapperMenuRight>
                     </StyledHeader>
                     <ul>
