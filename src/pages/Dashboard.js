@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import { Contenedor } from "../styles/Contenedor";
-import { Icons, StyledHeader } from "../styles/StyledIcons";
+import { Icons } from "../styles/StyledIcons";
 import { Grid1_2, Grid2_3, WrapperGrid } from "../styles/WrapperGrid";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { WrapperPage } from "../styles/WrapperPage";
@@ -15,6 +15,7 @@ import bookingsData from "../json/Bookings.json"
 import { Contact } from "../components/Contact";
 import MenuNav from "../components/MenuNav";
 import { ButtonIcon, ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { StyledHeader } from "../styles/StyledHeader";
 
 
 export default function Dashboard() {

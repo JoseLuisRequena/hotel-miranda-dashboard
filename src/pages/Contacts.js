@@ -1,5 +1,5 @@
 import { Contenedor } from "../styles/Contenedor";
-import { StyledHeader } from "../styles/StyledIcons";
+import { StyledHeader } from "../styles/StyledHeader";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext, useState } from "react";
@@ -9,7 +9,6 @@ import { Contact } from "../components/Contact";
 import { WrapperPage } from "../styles/WrapperPage";
 import MenuNav from "../components/MenuNav";
 import { ButtonIcon, ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
-
 
 export const Contacts = () => {
     const { state, dispatch } = useContext(AuthContext);

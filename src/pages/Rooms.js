@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Contenedor } from "../styles/Contenedor";
-import { StyledHeader } from "../styles/StyledIcons";
+import { StyledHeader } from "../styles/StyledHeader";
 import { Icons } from "../styles/StyledIcons";
 import { WrapperMenuRight } from "../styles/WrapperMenuRight";
 import { useContext, useEffect, useState } from "react";
