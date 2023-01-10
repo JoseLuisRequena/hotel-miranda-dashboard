@@ -9,6 +9,7 @@ import { Contact } from "../components/Contact";
 import { WrapperPage } from "../styles/WrapperPage";
 import MenuNav from "../components/MenuNav";
 import { ButtonIcon, ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { TitleH2 } from "../styles/StyledTitle";
 
 export const Contacts = () => {
     const { state, dispatch } = useContext(AuthContext);
@@ -31,7 +32,7 @@ export const Contacts = () => {
                         <WrapperButtonMenuNav>
                             <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                         </WrapperButtonMenuNav>
-                        <h2>Contacts</h2>
+                        <TitleH2>Contacts</TitleH2>
                         <WrapperMenuRight>
                             
                             <ButtonIcon > {Icons.enveloper} </ButtonIcon>

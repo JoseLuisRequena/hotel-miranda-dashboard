@@ -16,6 +16,7 @@ import { Contact } from "../components/Contact";
 import MenuNav from "../components/MenuNav";
 import { ButtonIcon, ButtonMenuNav, WrapperButtonMenuNav } from "../styles/StyledButtons";
 import { StyledHeader } from "../styles/StyledHeader";
+import { TitleH2 } from "../styles/StyledTitle";
 
 
 export default function Dashboard() {
@@ -81,7 +82,7 @@ export default function Dashboard() {
                 <WrapperButtonMenuNav>
                     <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                 </WrapperButtonMenuNav>
-                <h2>Dashboard</h2>
+                <TitleH2>Dashboard</TitleH2>
                 <WrapperMenuRight>
 
                     <ButtonIcon > {Icons.enveloper} </ButtonIcon>
