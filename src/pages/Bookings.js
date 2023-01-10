@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import MenuNav from "../components/MenuNav";
 import { ButtonDelete, ButtonIcon, ButtonMenuNav, ButtonState, ButtonView, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { TitleH2 } from "../styles/StyledTitle";
 
 const Tr =styled.tr`
   display: flex;
@@ -94,52 +95,52 @@ export const Bookings = () => {
         <Contenedor>
             <MenuNav open = {open}/>
             <div style={{display: "block", width: "100%"}}>
-            <StyledHeader>
-                <WrapperButtonMenuNav>
-                    <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
-                </WrapperButtonMenuNav>
-                <h2>Bookings</h2>
-                <WrapperMenuRight>
-                    
-                    <ButtonIcon > {Icons.enveloper} </ButtonIcon>
-                    <ButtonIcon > {Icons.bell} </ButtonIcon>
-                    <ButtonIcon onClick={() => Logout() }> {Icons.logout} </ButtonIcon>
-                
-                </WrapperMenuRight>
-            </StyledHeader>
-            <ul>
-                {bookingsList.map( 
-                    booking => (
-                        <Tr key={booking.id}>
-                            <Td>
-                                {booking.first_name}{booking.last_name}
-                                <br />
-                                {booking.id}
-                            </Td>
-                            <TdSmall>{booking.reservation_date}</TdSmall>-
-                            <TdSmall>{booking.checkIn}</TdSmall>-
-                            <TdSmall>{booking.checkOut}</TdSmall>
-                            <Td>
-                                <ButtonView onClick={() => seeBooking(booking.id)} />
-                            </Td>
-                            <Td>
-                                {booking.typeRoom}
-                            </Td>
-                            <TdSmall>
-                                <ButtonStatus status={booking.status}></ButtonStatus>
-                            </TdSmall>
-                            <TdSmall>
-                                <ButtonDelete onClick={() => borrarBooking(booking.id)}/>
-                            </TdSmall>
-                        </Tr>
-                    )                
-                )}
-            </ul>
-            
-            <ul>
-                    {booking.map( booking => 
-                    <li key = {booking.id} >{Object.values(booking)}</li>)}
-            </ul>
+                <StyledHeader>
+                    <WrapperButtonMenuNav>
+                        <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
+                    </WrapperButtonMenuNav>
+                    <TitleH2>Bookings</TitleH2>
+                    <WrapperMenuRight>
+
+                        <ButtonIcon > {Icons.enveloper} </ButtonIcon>
+                        <ButtonIcon > {Icons.bell} </ButtonIcon>
+                        <ButtonIcon onClick={() => Logout() }> {Icons.logout} </ButtonIcon>
+
+                    </WrapperMenuRight>
+                </StyledHeader>
+                <ul>
+                    {bookingsList.map( 
+                        booking => (
+                            <Tr key={booking.id}>
+                                <Td>
+                                    {booking.first_name}{booking.last_name}
+                                    <br />
+                                    {booking.id}
+                                </Td>
+                                <TdSmall>{booking.reservation_date}</TdSmall>-
+                                <TdSmall>{booking.checkIn}</TdSmall>-
+                                <TdSmall>{booking.checkOut}</TdSmall>
+                                <Td>
+                                    <ButtonView onClick={() => seeBooking(booking.id)} />
+                                </Td>
+                                <Td>
+                                    {booking.typeRoom}
+                                </Td>
+                                <TdSmall>
+                                    <ButtonStatus status={booking.status}></ButtonStatus>
+                                </TdSmall>
+                                <TdSmall>
+                                    <ButtonDelete onClick={() => borrarBooking(booking.id)}/>
+                                </TdSmall>
+                            </Tr>
+                        )                
+                    )}
+                </ul>
+                        
+                <ul>
+                        {booking.map( booking => 
+                        <li key = {booking.id} >{Object.values(booking)}</li>)}
+                </ul>
             </div>
         </Contenedor>
         </>

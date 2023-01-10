@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { allUsersArray, deleteUser, getAllUsers } from "../slices/usersSlice";
 import MenuNav from "../components/MenuNav";
 import { ButtonDelete, ButtonIcon, ButtonMenuNav, ButtonState, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { TitleH2 } from "../styles/StyledTitle";
 
 const Tr =styled.tr`
   display: flex;
@@ -93,7 +94,7 @@ export const Users = () => {
                         <WrapperButtonMenuNav>
                             <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                         </WrapperButtonMenuNav>
-                        <h2>Users</h2>
+                        <TitleH2>Users</TitleH2>
                         <WrapperMenuRight>
                             
                             <ButtonIcon > {Icons.enveloper} </ButtonIcon>

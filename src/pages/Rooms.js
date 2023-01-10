@@ -10,6 +10,7 @@ import { allRoomsArray, deleteRoom, getAllRooms, getRoom, oneRoom } from "../sli
 import { useDispatch, useSelector } from "react-redux";
 import MenuNav from "../components/MenuNav";
 import { ButtonDelete, ButtonIcon, ButtonMenuNav, ButtonState, WrapperButtonMenuNav } from "../styles/StyledButtons";
+import { TitleH2 } from "../styles/StyledTitle";
 
 const Tr =styled.tr`
   display: flex;
@@ -101,7 +102,7 @@ export const Rooms = () => {
                     <WrapperButtonMenuNav>
                         <ButtonMenuNav onClick = { handleOpen } >{Icons.arrows}</ButtonMenuNav>
                     </WrapperButtonMenuNav>
-                    <h2>Rooms</h2>
+                    <TitleH2>Rooms</TitleH2>
                     <WrapperMenuRight>
                         
                         <ButtonIcon > {Icons.enveloper} </ButtonIcon>
