@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hotel-miranda-dashboard/static/css/main.8322d479.css",
-    "main.js": "/hotel-miranda-dashboard/static/js/main.6a28f352.js",
+    "main.js": "/hotel-miranda-dashboard/static/js/main.2a72c3ef.js",
     "static/js/787.788303ae.chunk.js": "/hotel-miranda-dashboard/static/js/787.788303ae.chunk.js",
     "static/media/hotel-admin-dashboard.png": "/hotel-miranda-dashboard/static/media/hotel-admin-dashboard.e1db577a0fe934093ee4.png",
     "static/media/iconBell.svg": "/hotel-miranda-dashboard/static/media/iconBell.ea1dbd22ae2b3372916f4fc4e4c36175.svg",
@@ -13,11 +13,11 @@
     "static/media/iconBookings.svg": "/hotel-miranda-dashboard/static/media/iconBookings.287a7aedc3d0d20fc6ff416626f1b852.svg",
     "static/media/iconArrows.svg": "/hotel-miranda-dashboard/static/media/iconArrows.9b8ff9894f54960f42fe592dc33080a1.svg",
     "main.8322d479.css.map": "/hotel-miranda-dashboard/static/css/main.8322d479.css.map",
-    "main.6a28f352.js.map": "/hotel-miranda-dashboard/static/js/main.6a28f352.js.map",
+    "main.2a72c3ef.js.map": "/hotel-miranda-dashboard/static/js/main.2a72c3ef.js.map",
     "787.788303ae.chunk.js.map": "/hotel-miranda-dashboard/static/js/787.788303ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8322d479.css",
-    "static/js/main.6a28f352.js"
+    "static/js/main.2a72c3ef.js"
   ]
 }
