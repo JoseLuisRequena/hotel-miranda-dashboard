@@ -4,7 +4,6 @@ import { ButtonContact } from "../styles/StyledButtons";
 import { ImgUser, UserName, UserWrapper } from "../styles/StyledUser";
 import ModalEditUser from "./ModalEditUser";
 
-
 export default function User(){
     const { state } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
