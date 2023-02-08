@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../App";
 import { ButtonContact } from "../styles/StyledButtons";
-import { ImgUser, UserName, UserWrapper } from "../styles/StyledUser";
+import { ImgUser, UserEmail, UserName, UserWrapper } from "../styles/StyledUser";
 import ModalEditUser from "./ModalEditUser";
 
 export default function User(){
